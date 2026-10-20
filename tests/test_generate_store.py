@@ -41,16 +41,18 @@ class CatalogTests(unittest.TestCase):
             inputs = [
                 {"package": ext["package"], "code": 104002 if index == 0 else 106003,
                  "name": "1.4.2" if index == 0 else "1.6.3",
-                 "sha1": "1234567890abcdef1234567890abcdef12345678"}
+                 "sha256": module.EXPECTED_CERT_SHA256}
                 for index, ext in enumerate(module.EXTENSIONS)
             ]
             with patch.object(module, "metadata", side_effect=inputs):
                 index = module.generate(base, base / "publish", "aapt", "apksigner")
             self.assertEqual(len(index["extensionList"]["extensions"]), 2)
             self.assertEqual(index["signingKey"],
-                             "1234567890abcdef1234567890abcdef12345678")
+                             module.EXPECTED_CERT_SHA256)
             listing = json.loads((base / "publish/index.json").read_text())
             self.assertEqual(listing["name"], "Selura Extensions")
+            self.assertEqual(listing["signingKey"], module.EXPECTED_CERT_SHA256)
+            self.assertEqual(len(listing["signingKey"]), 64)
             self.assertEqual(listing["extensionList"]["extensions"][0]["contentWarning"], "NSFW")
             self.assertEqual(listing["extensionList"]["extensions"][1]["contentWarning"], "MIXED")
             for entry in listing["extensionList"]["extensions"]:
@@ -59,6 +61,7 @@ class CatalogTests(unittest.TestCase):
                 self.assertTrue(entry["versionCode"] > 0)
             redirect = json.loads((base / "publish/repo.json").read_text())
             self.assertEqual(redirect["index_v2"], module.RAW_BASE + "/index.json")
+            self.assertEqual(redirect["meta"]["signingKeyFingerprint"], module.EXPECTED_CERT_SHA256)
 
     def test_reject_wrong_android_package(self):
         with tempfile.TemporaryDirectory() as t:
@@ -67,7 +70,7 @@ class CatalogTests(unittest.TestCase):
                 (base / item["filename"]).write_bytes(b"apk bytes placeholder")
             with patch.object(module, "metadata", return_value={
                 "package": "untrusted.package", "code": 1, "name": "1.4.2",
-                "sha1": "1234",
+                "sha256": module.EXPECTED_CERT_SHA256,
             }):
                 with self.assertRaisesRegex(ValueError, "Wrong APK package"):
                     module.generate(base, base / "publish", "aapt", "apksigner")
@@ -79,11 +82,24 @@ class CatalogTests(unittest.TestCase):
                 (base / item["filename"]).write_bytes(b"apk bytes placeholder")
             with patch.object(module, "metadata", side_effect=[
                 {"package": module.EXTENSIONS[0]["package"], "code": 1,
-                 "name": "1.4.2", "sha1": "aaaa"},
+                 "name": "1.4.2", "sha256": "a" * 64},
                 {"package": module.EXTENSIONS[1]["package"], "code": 2,
-                 "name": "1.6.3", "sha1": "bbbb"},
+                 "name": "1.6.3", "sha256": "b" * 64},
             ]):
                 with self.assertRaisesRegex(ValueError, "signer identities do not match"):
+                    module.generate(base, base / "publish", "aapt", "apksigner")
+
+    def test_sha256_fingerprint_required_not_sha1(self):
+        with tempfile.TemporaryDirectory() as t:
+            base = Path(t)
+            for item in module.EXTENSIONS:
+                (base / item["filename"]).write_bytes(b"placeholder APK")
+            bad_digest = "1234567890abcdef1234567890abcdef12345678"  # 40-character SHA-1
+            with patch.object(module, "metadata", side_effect=[
+                {"package": item["package"], "code": 1, "name": "1.4.2", "sha256": bad_digest}
+                for item in module.EXTENSIONS
+            ]):
+                with self.assertRaisesRegex(ValueError, "Unexpected signing certificate"):
                     module.generate(base, base / "publish", "aapt", "apksigner")
 
 
