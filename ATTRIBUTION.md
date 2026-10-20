@@ -16,6 +16,23 @@ The Selura extension store publishes **independently packaged, modified source e
 - License: Apache License, Version 2.0 (see [LICENSE](LICENSE)).
 - Selura modifications: separate package `eu.kanade.tachiyomi.extension.all.seluramangadex`, separate generated source IDs, Selura network identification, source name and versioning, and disabled conflicting deep-link capture. Original extension unchanged.
 
+## Planned first expansion — six Keiyoushi-derived providers
+
+The following are **separate Selura-maintained Android extension packages** adapted from the Apache-2.0 licensed Keiyoushi extension source repository pinned to commit `ff521c17bb3e503c01e658e8fac00b60a95829f3`:
+
+| Name shown in Selura | Upstream source module | Separate package suffix |
+| --- | --- | --- |
+| MANGA Plus by SHUEISHA | `src/all/mangaplus` | `all.seluramangaplus` |
+| Webtoons.com | `src/all/webtoons` | `all.selurawebtoons` |
+| MangaFire | `src/all/mangafire` | `all.seluramangafire` |
+| MangaPill | `src/en/mangapill` | `en.seluramangapill` |
+| MangaKatana | `src/en/mangakatana` | `en.seluramangakatana` |
+| Mangabat | `src/en/mangabat` | `en.seluramangabat` |
+
+Modifications: independent Android application package suffixes, source ID `versionId=2` for non-colliding source identities while preserving the original site display names, removed duplicate deep-link intent interception, independent Selura signing, and retained upstream LICENSE/provenance. Existing original Keiyoushi and Selura packages remain untouched. Content listings and website availability depend on each upstream service and its conditions.
+
+**Release status:** The additional APKs must pass independent Gradle build, Android signature, package and index validation before inclusion in the public store. Site functionality still requires Android testing; successful compilation does not guarantee live provider compatibility.
+
 All original relevant copyright and attribution notices must remain in the corresponding source checkout or derivative source module. Publishing an extension APK does not confer rights to any manga content.
 
 The releases are signed with Selura's existing certificate. The public store does **not** hold any signing private key or the credentials used to access the owner's private development repository.
