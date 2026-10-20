@@ -1,0 +1,562 @@
+{
+  "name": "Selura Extensions",
+  "badgeLabel": "Selura",
+  "signingKey": "95366c895b24b05d2f37a4cdeb30ad9ad4d70d96",
+  "contact": {
+    "website": "https://github.com/john-selwyn/selura-extensions",
+    "discord": null
+  },
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "Selura NHentai",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluranhentai",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/selura-nhentai.apk",
+          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/selura-nhentai.png"
+        },
+        "extensionLib": "1.4",
+        "versionCode": 104002,
+        "versionName": "1.4.2",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 8029474551165873164,
+            "name": "Selura NHentai",
+            "language": "all",
+            "homeUrl": "https://nhentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1056532605681435776,
+            "name": "Selura NHentai",
+            "language": "en",
+            "homeUrl": "https://nhentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8617455063093684218,
+            "name": "Selura NHentai",
+            "language": "ja",
+            "homeUrl": "https://nhentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 447474539234689456,
+            "name": "Selura NHentai",
+            "language": "zh",
+            "homeUrl": "https://nhentai.net",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Selura MangaDex",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluramangadex",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/selura-mangadex.apk",
+          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/selura-mangadex.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 106003,
+        "versionName": "1.6.3",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 4900280720132691826,
+            "name": "Selura MangaDex",
+            "language": "af",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2593629824861138292,
+            "name": "Selura MangaDex",
+            "language": "sq",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 311528921653807324,
+            "name": "Selura MangaDex",
+            "language": "ar",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4190765681566433211,
+            "name": "Selura MangaDex",
+            "language": "az",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3860732707249796188,
+            "name": "Selura MangaDex",
+            "language": "eu",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2024098965077748025,
+            "name": "Selura MangaDex",
+            "language": "be",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4268592958835403836,
+            "name": "Selura MangaDex",
+            "language": "bn",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7992728537663013952,
+            "name": "Selura MangaDex",
+            "language": "bg",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5333654051284489791,
+            "name": "Selura MangaDex",
+            "language": "my",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 265660417034629658,
+            "name": "Selura MangaDex",
+            "language": "ca",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6971497432490436089,
+            "name": "Selura MangaDex",
+            "language": "zh-Hans",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5112007388681939758,
+            "name": "Selura MangaDex",
+            "language": "zh-Hant",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7773498769752591137,
+            "name": "Selura MangaDex",
+            "language": "cv",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4217366513370286126,
+            "name": "Selura MangaDex",
+            "language": "hr",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4623067788546337600,
+            "name": "Selura MangaDex",
+            "language": "cs",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8882538479810514432,
+            "name": "Selura MangaDex",
+            "language": "da",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 469405963575686625,
+            "name": "Selura MangaDex",
+            "language": "nl",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3307801940728151732,
+            "name": "Selura MangaDex",
+            "language": "en",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8100066555056050742,
+            "name": "Selura MangaDex",
+            "language": "eo",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3274333389122595625,
+            "name": "Selura MangaDex",
+            "language": "et",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 340683195581237350,
+            "name": "Selura MangaDex",
+            "language": "fil",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7127077009982659048,
+            "name": "Selura MangaDex",
+            "language": "fi",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3037992701779296491,
+            "name": "Selura MangaDex",
+            "language": "fr",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 332264737731035105,
+            "name": "Selura MangaDex",
+            "language": "ka",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3997038153546777439,
+            "name": "Selura MangaDex",
+            "language": "de",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4791592654756993577,
+            "name": "Selura MangaDex",
+            "language": "el",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6034495669744226197,
+            "name": "Selura MangaDex",
+            "language": "he",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 448593681872063865,
+            "name": "Selura MangaDex",
+            "language": "hi",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1479161794596451471,
+            "name": "Selura MangaDex",
+            "language": "hu",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6131299428579667409,
+            "name": "Selura MangaDex",
+            "language": "ga",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 192095666364374172,
+            "name": "Selura MangaDex",
+            "language": "id",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7996890845250536519,
+            "name": "Selura MangaDex",
+            "language": "it",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6592289587572164349,
+            "name": "Selura MangaDex",
+            "language": "ja",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7483193985100094473,
+            "name": "Selura MangaDex",
+            "language": "jv",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6926057124876325917,
+            "name": "Selura MangaDex",
+            "language": "kk",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4388000945445707253,
+            "name": "Selura MangaDex",
+            "language": "ko",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5911069470199027491,
+            "name": "Selura MangaDex",
+            "language": "la",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 574715420207819047,
+            "name": "Selura MangaDex",
+            "language": "lt",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8173137722886173650,
+            "name": "Selura MangaDex",
+            "language": "ms",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3115191644658968467,
+            "name": "Selura MangaDex",
+            "language": "mn",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7125820932997313150,
+            "name": "Selura MangaDex",
+            "language": "ne",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5759037978811352601,
+            "name": "Selura MangaDex",
+            "language": "no",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3387411494452114409,
+            "name": "Selura MangaDex",
+            "language": "fa",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8061138999191888009,
+            "name": "Selura MangaDex",
+            "language": "pl",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8436282870669554571,
+            "name": "Selura MangaDex",
+            "language": "pt-BR",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8861791394849304024,
+            "name": "Selura MangaDex",
+            "language": "pt",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2918999579025817756,
+            "name": "Selura MangaDex",
+            "language": "ro",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8085783187507189420,
+            "name": "Selura MangaDex",
+            "language": "ru",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7961472195193111085,
+            "name": "Selura MangaDex",
+            "language": "sr",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6133395464056498417,
+            "name": "Selura MangaDex",
+            "language": "sk",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2468170838352494749,
+            "name": "Selura MangaDex",
+            "language": "es-419",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1526267183290489651,
+            "name": "Selura MangaDex",
+            "language": "es",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1974287602986493485,
+            "name": "Selura MangaDex",
+            "language": "sv",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8429133589463419179,
+            "name": "Selura MangaDex",
+            "language": "ta",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1306830934365554734,
+            "name": "Selura MangaDex",
+            "language": "te",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8685219214767264276,
+            "name": "Selura MangaDex",
+            "language": "th",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8119198241426287711,
+            "name": "Selura MangaDex",
+            "language": "tr",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8622062100562520709,
+            "name": "Selura MangaDex",
+            "language": "uk",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3074086911391870077,
+            "name": "Selura MangaDex",
+            "language": "ur",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3696994160326591811,
+            "name": "Selura MangaDex",
+            "language": "uz",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8871876684143623168,
+            "name": "Selura MangaDex",
+            "language": "vi",
+            "homeUrl": "https://mangadex.org",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      }
+    ]
+  },
+  "extensionListUrl": null
+}
