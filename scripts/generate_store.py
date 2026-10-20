@@ -30,10 +30,14 @@ MANGADEX_LANGUAGES = (
     "es-419", "es", "sv", "ta", "te", "th", "tr", "uk", "ur", "uz", "vi",
 )
 NHENTAI_LANGUAGES = ("all", "en", "ja", "zh")
+# Natural store listing titles. The first two preserve the existing source
+# IDs based on their original "Selura ..." name, so old manga still open.
 EXTENSIONS = (
     {
         "filename": "selura-nhentai.apk",
-        "name": "Selura NHentai",
+        "name": "NHentai",
+        "source_id_name": "Selura NHentai",
+        "source_id_version": 1,
         "package": "eu.kanade.tachiyomi.extension.all.seluranhentai",
         "url": "https://nhentai.net",
         "warning": "NSFW",
@@ -41,11 +45,67 @@ EXTENSIONS = (
     },
     {
         "filename": "selura-mangadex.apk",
-        "name": "Selura MangaDex",
+        "name": "MangaDex",
+        "source_id_name": "Selura MangaDex",
+        "source_id_version": 1,
         "package": "eu.kanade.tachiyomi.extension.all.seluramangadex",
         "url": "https://mangadex.org",
         "warning": "MIXED",
         "languages": MANGADEX_LANGUAGES,
+    },
+    {
+        "filename": "seluramangaplus.apk",
+        "name": "MANGA Plus by SHUEISHA",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangaplus",
+        "url": "https://mangaplus.shueisha.co.jp",
+        "warning": "SAFE",
+        "languages": ("en", "es", "fr", "id", "pt-BR", "ru", "th", "vi", "de"),
+    },
+    {
+        "filename": "selurawebtoons.apk",
+        "name": "Webtoons.com",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.all.selurawebtoons",
+        "url": "https://www.webtoons.com",
+        "warning": "SAFE",
+        "languages": ("en", "id", "th", "es", "fr", "zh-Hant", "de"),
+    },
+    {
+        "filename": "seluramangafire.apk",
+        "name": "MangaFire",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangafire",
+        "url": "https://mangafire.to",
+        "warning": "MIXED",
+        "languages": ("en", "es", "es-419", "fr", "ja", "pt", "pt-BR"),
+    },
+    {
+        "filename": "seluramangapill.apk",
+        "name": "MangaPill",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangapill",
+        "url": "https://mangapill.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangakatana.apk",
+        "name": "MangaKatana",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangakatana",
+        "url": "https://mangakatana.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangabat.apk",
+        "name": "Mangabat",
+        "source_id_version": 2,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangabat",
+        "url": "https://www.mangabats.com",
+        "warning": "MIXED",
+        "languages": ("en",),
     },
 )
 
@@ -147,7 +207,7 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
                 "contentWarning": spec["warning"],
                 "sources": [
                     {
-                        "id": source_id(spec["name"], language),
+                        "id": source_id(spec.get("source_id_name", spec["name"]), language, spec["source_id_version"]),
                         "name": spec["name"],
                         "language": language,
                         "homeUrl": spec["url"],
