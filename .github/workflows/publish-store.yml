@@ -74,7 +74,7 @@ jobs:
           test -s "$RUNNER_TEMP/private-apks/selura-mangadex.apk"
           # Add six independently signed APKs, only after the pinned private
           # build completes successfully. This release tag must remain exact.
-          gh release download test-selura-batch-pr-28-run-3 \
+          gh release download test-selura-batch-pr-28-run-4 \
             --repo john-selwyn/selura-reader \
             --pattern '*.apk' \
             --dir "$RUNNER_TEMP/private-apks"
