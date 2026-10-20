@@ -1771,6 +1771,998 @@
             "message": null
           }
         ]
+      },
+      {
+        "name": "Comick (Unoriginal)",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluracomicklive",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluracomicklive.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluracomicklive.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 2252359830517157141,
+            "name": "Comick (Unoriginal)",
+            "language": "all",
+            "homeUrl": "https://comick.live",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "GlobalComix",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluraglobalcomix",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluraglobalcomix.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluraglobalcomix.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 7512058379071617635,
+            "name": "GlobalComix",
+            "language": "sq",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4431267450490919128,
+            "name": "GlobalComix",
+            "language": "ar",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6856958976274049921,
+            "name": "GlobalComix",
+            "language": "bg",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4002694633971192777,
+            "name": "GlobalComix",
+            "language": "bn",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3447634395644203658,
+            "name": "GlobalComix",
+            "language": "pt-BR",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3403092328049872576,
+            "name": "GlobalComix",
+            "language": "zh-Hans",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7163857654577538718,
+            "name": "GlobalComix",
+            "language": "cs",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8438530114088119158,
+            "name": "GlobalComix",
+            "language": "de",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3316648338746861900,
+            "name": "GlobalComix",
+            "language": "da",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3034454312726356875,
+            "name": "GlobalComix",
+            "language": "el",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1245871296049513541,
+            "name": "GlobalComix",
+            "language": "en",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5094193619885350408,
+            "name": "GlobalComix",
+            "language": "es",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3413036101166969000,
+            "name": "GlobalComix",
+            "language": "fa",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6260101556640086863,
+            "name": "GlobalComix",
+            "language": "fi",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1822266811757615571,
+            "name": "GlobalComix",
+            "language": "fil",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3145428528251019730,
+            "name": "GlobalComix",
+            "language": "fr",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3734668570801303850,
+            "name": "GlobalComix",
+            "language": "hi",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3544668538221772323,
+            "name": "GlobalComix",
+            "language": "hu",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4700115655435481129,
+            "name": "GlobalComix",
+            "language": "id",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5715112031497946313,
+            "name": "GlobalComix",
+            "language": "it",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8326663257026103717,
+            "name": "GlobalComix",
+            "language": "he",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1478784419019842223,
+            "name": "GlobalComix",
+            "language": "ja",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6635626858990855009,
+            "name": "GlobalComix",
+            "language": "ko",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5082028699347565064,
+            "name": "GlobalComix",
+            "language": "lv",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6333406414117067828,
+            "name": "GlobalComix",
+            "language": "ms",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8266024179164668612,
+            "name": "GlobalComix",
+            "language": "nl",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 374034746408409381,
+            "name": "GlobalComix",
+            "language": "no",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5525109669379685739,
+            "name": "GlobalComix",
+            "language": "pl",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1332047418255957516,
+            "name": "GlobalComix",
+            "language": "pt",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4331518162784726120,
+            "name": "GlobalComix",
+            "language": "ro",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4644435937174517193,
+            "name": "GlobalComix",
+            "language": "ru",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4190584224323257927,
+            "name": "GlobalComix",
+            "language": "sv",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1058392851098541028,
+            "name": "GlobalComix",
+            "language": "sk",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8612082035730616106,
+            "name": "GlobalComix",
+            "language": "sl",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3004881902228414234,
+            "name": "GlobalComix",
+            "language": "ta",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2668490986166096628,
+            "name": "GlobalComix",
+            "language": "th",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 188828425031694854,
+            "name": "GlobalComix",
+            "language": "tr",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6862995622103108009,
+            "name": "GlobalComix",
+            "language": "uk",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2399551587097042297,
+            "name": "GlobalComix",
+            "language": "ur",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4483798429340880559,
+            "name": "GlobalComix",
+            "language": "vi",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5683799942343011308,
+            "name": "GlobalComix",
+            "language": "zh-Hant",
+            "homeUrl": "https://globalcomix.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "MangaToon (Limited)",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluramangatoon",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangatoon.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangatoon.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 3972475533197563993,
+            "name": "MangaToon (Limited)",
+            "language": "zh",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5113938615482193059,
+            "name": "MangaToon (Limited)",
+            "language": "en",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1673338546342508557,
+            "name": "MangaToon (Limited)",
+            "language": "id",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2633595242676690719,
+            "name": "MangaToon (Limited)",
+            "language": "vi",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1638175524067578829,
+            "name": "MangaToon (Limited)",
+            "language": "es",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6372176317584809046,
+            "name": "MangaToon (Limited)",
+            "language": "th",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2166560724050327965,
+            "name": "MangaToon (Limited)",
+            "language": "fr",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5532079577145975424,
+            "name": "MangaToon (Limited)",
+            "language": "ja",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1092877810463686336,
+            "name": "MangaToon (Limited)",
+            "language": "pt-BR",
+            "homeUrl": "https://mangatoon.mobi",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Manga UP!",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluramangaup",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangaup.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangaup.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 3308810260318714151,
+            "name": "Manga UP!",
+            "language": "en",
+            "homeUrl": "https://global.manga-up.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "MANGA Plus Creators by SHUEISHA",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluramangapluscreators",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangapluscreators.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangapluscreators.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 954336862792881078,
+            "name": "MANGA Plus Creators by SHUEISHA",
+            "language": "en",
+            "homeUrl": "https://mangaplus-creators.jp",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1440466655805540017,
+            "name": "MANGA Plus Creators by SHUEISHA",
+            "language": "es",
+            "homeUrl": "https://mangaplus-creators.jp",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "NamiComi",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluranamicomi",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluranamicomi.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluranamicomi.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 4667006231064779534,
+            "name": "NamiComi",
+            "language": "en",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1180420751143220697,
+            "name": "NamiComi",
+            "language": "ar",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5035140006237514548,
+            "name": "NamiComi",
+            "language": "bg",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1494759499689836610,
+            "name": "NamiComi",
+            "language": "ca",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6945741137785812275,
+            "name": "NamiComi",
+            "language": "zh-Hans",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5195182828983722621,
+            "name": "NamiComi",
+            "language": "zh-Hant",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4419740910540984432,
+            "name": "NamiComi",
+            "language": "hr",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3637938700686125641,
+            "name": "NamiComi",
+            "language": "cs",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4766004223694339776,
+            "name": "NamiComi",
+            "language": "da",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1921041436140349484,
+            "name": "NamiComi",
+            "language": "nl",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4108050337002535342,
+            "name": "NamiComi",
+            "language": "et",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9074907523388630354,
+            "name": "NamiComi",
+            "language": "fil",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7658519011270752141,
+            "name": "NamiComi",
+            "language": "fi",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9081359211678970519,
+            "name": "NamiComi",
+            "language": "fr",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7910908899604972589,
+            "name": "NamiComi",
+            "language": "de",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6645118513374623565,
+            "name": "NamiComi",
+            "language": "el",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4503052728918678682,
+            "name": "NamiComi",
+            "language": "he",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3736936438830710560,
+            "name": "NamiComi",
+            "language": "hi",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4641338035945995010,
+            "name": "NamiComi",
+            "language": "hu",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3649099710240826986,
+            "name": "NamiComi",
+            "language": "is",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1625855389067019952,
+            "name": "NamiComi",
+            "language": "ga",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5710484005091508705,
+            "name": "NamiComi",
+            "language": "id",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8743368064920439102,
+            "name": "NamiComi",
+            "language": "it",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4122239952779642461,
+            "name": "NamiComi",
+            "language": "ja",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1787699098243309976,
+            "name": "NamiComi",
+            "language": "ko",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 230033956867938516,
+            "name": "NamiComi",
+            "language": "lt",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4526993078695907617,
+            "name": "NamiComi",
+            "language": "ms",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8280130263772528447,
+            "name": "NamiComi",
+            "language": "ne",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 568557261238551243,
+            "name": "NamiComi",
+            "language": "no",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6573361803706759181,
+            "name": "NamiComi",
+            "language": "pa",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9092526008090507532,
+            "name": "NamiComi",
+            "language": "fa",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8188742087224914889,
+            "name": "NamiComi",
+            "language": "pl",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8198755244246234987,
+            "name": "NamiComi",
+            "language": "pt-BR",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6347002336337718549,
+            "name": "NamiComi",
+            "language": "pt",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5925294147609918841,
+            "name": "NamiComi",
+            "language": "ru",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8689983113922921941,
+            "name": "NamiComi",
+            "language": "sk",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1300945706135279642,
+            "name": "NamiComi",
+            "language": "sl",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5388036050328907209,
+            "name": "NamiComi",
+            "language": "es-419",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8448072240864139480,
+            "name": "NamiComi",
+            "language": "es",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2716417721010757113,
+            "name": "NamiComi",
+            "language": "sv",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3026924471155318578,
+            "name": "NamiComi",
+            "language": "th",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7273179782512593172,
+            "name": "NamiComi",
+            "language": "tr",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7701645311061357663,
+            "name": "NamiComi",
+            "language": "uk",
+            "homeUrl": "https://namicomi.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Dynasty Scans",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluradynasty",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluradynasty.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluradynasty.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 1491116886311644526,
+            "name": "Dynasty Scans",
+            "language": "en",
+            "homeUrl": "https://dynasty-scans.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Gunnerkrigg Court",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluragunnerkriggcourt",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluragunnerkriggcourt.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluragunnerkriggcourt.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 527919366008565511,
+            "name": "Gunnerkrigg Court",
+            "language": "en",
+            "homeUrl": "https://www.gunnerkrigg.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Mangago",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangago",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangago.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangago.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 3485619503619410742,
+            "name": "Mangago",
+            "language": "en",
+            "homeUrl": "https://www.mangago.me",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Mangahere",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangahere",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangahere.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangahere.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 6999037048973979333,
+            "name": "Mangahere",
+            "language": "en",
+            "homeUrl": "https://www.mangahere.cc",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "MangaFox",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangafox",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangafox.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangafox.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110002,
+        "versionName": "1.6.4002",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 6746720796987266689,
+            "name": "MangaFox",
+            "language": "en",
+            "homeUrl": "https://fanfox.net",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Manganato",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramanganato",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramanganato.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramanganato.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110017,
+        "versionName": "1.6.4017",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 4079612234212235228,
+            "name": "Manganato",
+            "language": "en",
+            "homeUrl": "https://www.natomanga.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
       }
     ]
   },
