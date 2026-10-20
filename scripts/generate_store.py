@@ -295,6 +295,137 @@ def alternate_orphan_id(package_suffix: str, old_id: str) -> int:
 
 
 
+# Additive expansion: 12 isolated sources from upstream Keiyoushi pinned snapshot.
+# Source version family 7302 and seed "selura-expansion-v1" are immutable
+# once APKs are published; original 26 entries remain untouched.
+EXPANSION_SOURCE_VERSION = 7302
+EXPANSION_EXTENSIONS = (
+    {
+        "filename": "seluracomicklive.apk",
+        "name": "Comick (Unoriginal)",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluracomicklive",
+        "url": "https://comick.live",
+        "warning": "MIXED",
+        "languages": ("all",),
+        "explicit_old_ids": {"all": "4972933717624256217"},
+    },
+    {
+        "filename": "seluraglobalcomix.apk",
+        "name": "GlobalComix",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluraglobalcomix",
+        "url": "https://globalcomix.com",
+        "warning": "MIXED",
+        "languages": ("sq", "ar", "bg", "bn", "pt-BR", "zh-Hans", "cs", "de", "da", "el", "en", "es", "fa", "fi", "fil", "fr", "hi", "hu", "id", "it", "he", "ja", "ko", "lv", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sv", "sk", "sl", "ta", "th", "tr", "uk", "ur", "vi", "zh-Hant"),
+        "explicit_old_ids": {"sq": "3356591153022230079", "da": "5048347663546425663"},
+    },
+    {
+        "filename": "seluramangatoon.apk",
+        "name": "MangaToon (Limited)",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangatoon",
+        "url": "https://mangatoon.mobi",
+        "warning": "SAFE",
+        "languages": ("zh", "en", "id", "vi", "es", "th", "fr", "ja", "pt-BR"),
+        "explicit_old_ids": {"pt-BR": "2064722193112934135"},
+    },
+    {
+        "filename": "seluramangaup.apk",
+        "name": "Manga UP!",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangaup",
+        "url": "https://global.manga-up.com",
+        "warning": "SAFE",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangapluscreators.apk",
+        "name": "MANGA Plus Creators by SHUEISHA",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangapluscreators",
+        "url": "https://mangaplus-creators.jp",
+        "warning": "SAFE",
+        "languages": ("en", "es"),
+    },
+    {
+        "filename": "seluranamicomi.apk",
+        "name": "NamiComi",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluranamicomi",
+        "url": "https://namicomi.com",
+        "warning": "SAFE",
+        "languages": ("en", "ar", "bg", "ca", "zh-Hans", "zh-Hant", "hr", "cs", "da", "nl", "et", "fil", "fi", "fr", "de", "el", "he", "hi", "hu", "is", "ga", "id", "it", "ja", "ko", "lt", "ms", "ne", "no", "pa", "fa", "pl", "pt-BR", "pt", "ru", "sk", "sl", "es-419", "es", "sv", "th", "tr", "uk"),
+    },
+    {
+        "filename": "seluradynasty.apk",
+        "name": "Dynasty Scans",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluradynasty",
+        "url": "https://dynasty-scans.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+        "explicit_old_ids": {"en": "669095474988166464"},
+    },
+    {
+        "filename": "seluragunnerkriggcourt.apk",
+        "name": "Gunnerkrigg Court",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluragunnerkriggcourt",
+        "url": "https://www.gunnerkrigg.com",
+        "warning": "SAFE",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangago.apk",
+        "name": "Mangago",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangago",
+        "url": "https://www.mangago.me",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangahere.apk",
+        "name": "Mangahere",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangahere",
+        "url": "https://www.mangahere.cc",
+        "warning": "MIXED",
+        "languages": ("en",),
+        "explicit_old_ids": {"en": "2"},
+    },
+    {
+        "filename": "seluramangafox.apk",
+        "name": "MangaFox",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangafox",
+        "url": "https://fanfox.net",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramanganato.apk",
+        "name": "Manganato",
+        "source_id_version": EXPANSION_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramanganato",
+        "url": "https://www.natomanga.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+        "explicit_old_ids": {"en": "1024627298672457456"},
+    },
+)
+EXTENSIONS = BASE_EXTENSIONS + ORPHANED_EXTENSIONS + EXPANSION_EXTENSIONS
+
+
+def alternate_expansion_id(module: str, old_id: str) -> int:
+    """Exact stable explicit-ID remapping used by Selura expansion_12.py."""
+    seed = ("selura-expansion-v1:" + module + ":" + old_id).encode("utf-8")
+    return (int.from_bytes(hashlib.sha256(seed).digest()[:8], "big") & ((1 << 63) - 1)) or 1
+
+
+
+
 def source_id(name: str, language: str, version_id: int = 1) -> int:
     """Match Keiyoushi's Java MD5-derived source ID algorithm exactly."""
     key = f"{name.lower()}/{language}/{version_id}".encode("utf-8")
@@ -393,9 +524,16 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
                 "sources": [
                     {
                         "id": (
-                            alternate_orphan_id(
-                                spec["package"].rsplit(".", 1)[-1],
-                                spec["explicit_old_ids"][language],
+                            (
+                                alternate_expansion_id(
+                                    spec["package"].rsplit(".", 1)[-1],
+                                    spec["explicit_old_ids"][language],
+                                )
+                                if spec["source_id_version"] == EXPANSION_SOURCE_VERSION
+                                else alternate_orphan_id(
+                                    spec["package"].rsplit(".", 1)[-1],
+                                    spec["explicit_old_ids"][language],
+                                )
                             )
                             if language in spec.get("explicit_old_ids", {})
                             else source_id(

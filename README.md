@@ -8,11 +8,13 @@ Independent public extension catalog for [Selura Manga](https://github.com/zexal
 https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/repo.json
 ```
 
-The store maintains **26 separately signed manga extensions**: 8 pre-existing source packages plus the 18 new orphaned-source derivatives (NHentai is **not** duplicated). Provider names appear naturally, without a "Selura" prefix.
+The store maintains **38 separately signed manga extensions**: 8 pre-existing sources, 18 already-published orphaned derivatives, and 12 new Keiyoushi-based derivatives (NHentai is **not** duplicated). Provider names appear naturally, without a "Selura" prefix.
 
 The original 8 are NHentai, MangaDex, MANGA Plus by SHUEISHA, Webtoons.com, MangaFire, MangaPill, MangaKatana and Mangabat.
 
 The new 18 are 3Hentai, AllPornComic, Asura Scans, Doujins, Flame Comics, HDoujin, Hentai4Free, HentaiHand, HentaiRead, Hiperdex, Hive Scans, MangaGeko, Mangakakalot, Mgread.io, ToonGod, Toonily, Vortex Scans and WebtoonXYZ. Some are adult-only; the reader may hide them depending on content filters.
+
+**Twelve additional Keiyoushi-based sources:** Comick (Unoriginal), GlobalComix, MangaToon (Limited), Manga UP!, MANGA Plus Creators by SHUEISHA, NamiComi, Dynasty Scans, Gunnerkrigg Court, Mangago, Mangahere, MangaFox and Manganato.
 
 **Build and repository publishing are not evidence that a content provider works at runtime.** Test extensions on Android before relying on them.
 
@@ -31,6 +33,7 @@ The catalog endpoint contains the JSON metadata and public signed APK/icon URLs.
 - This repository publishes **verified** APKs and a Mihon-compatible `index.json` from those immutable releases. No private signing key is published or imported.
 - The original 8 Android packages and source IDs remain unchanged.
 - The new 18 use distinct `selura...` internal Android packages and the immutable `versionId=7301` source family. Legacy explicit source IDs are remapped deterministically to avoid taking over already-installed source identities; the new source IDs must not change after publishing.
+- The added 12 retain separate immutable source.versionId=7302 and deterministic explicit source-ID remapping; the original 26 packages and their source IDs are not modified.
 - Apache-2.0 upstream licensing and required attribution are preserved. Providers' login rules and access controls must be respected.
 
 See [STORE_MAINTENANCE.md](STORE_MAINTENANCE.md) for security, signing verification, and publishing details.
