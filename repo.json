@@ -1,9 +1,9 @@
 {
-  "index_v2": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/index.json",
+  "index_v2": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/index.json",
   "meta": {
     "name": "Selura Extensions",
     "shortName": "Selura",
-    "website": "https://github.com/john-selwyn/selura-extensions",
+    "website": "https://github.com/zexaldragneel/selura-extensions",
     "signingKeyFingerprint": "da9cfd25f9b1c694b585d427e5faa8c9a1d052b8d846051fbe1569d65c851d42"
   }
 }

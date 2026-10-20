@@ -3,7 +3,7 @@
   "badgeLabel": "Selura",
   "signingKey": "da9cfd25f9b1c694b585d427e5faa8c9a1d052b8d846051fbe1569d65c851d42",
   "contact": {
-    "website": "https://github.com/john-selwyn/selura-extensions",
+    "website": "https://github.com/zexaldragneel/selura-extensions",
     "discord": null
   },
   "extensionList": {
@@ -12,8 +12,8 @@
         "name": "NHentai",
         "packageName": "eu.kanade.tachiyomi.extension.all.seluranhentai",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/selura-nhentai.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/selura-nhentai.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selura-nhentai.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selura-nhentai.png"
         },
         "extensionLib": "1.4",
         "versionCode": 104002,
@@ -58,8 +58,8 @@
         "name": "MangaDex",
         "packageName": "eu.kanade.tachiyomi.extension.all.seluramangadex",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/selura-mangadex.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/selura-mangadex.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selura-mangadex.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selura-mangadex.png"
         },
         "extensionLib": "1.6",
         "versionCode": 106003,
@@ -560,8 +560,8 @@
         "name": "MANGA Plus by SHUEISHA",
         "packageName": "eu.kanade.tachiyomi.extension.all.seluramangaplus",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/seluramangaplus.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/seluramangaplus.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangaplus.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangaplus.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107006,
@@ -646,8 +646,8 @@
         "name": "Webtoons.com",
         "packageName": "eu.kanade.tachiyomi.extension.all.selurawebtoons",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/selurawebtoons.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/selurawebtoons.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurawebtoons.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurawebtoons.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107006,
@@ -716,8 +716,8 @@
         "name": "MangaFire",
         "packageName": "eu.kanade.tachiyomi.extension.all.seluramangafire",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/seluramangafire.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/seluramangafire.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangafire.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangafire.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107006,
@@ -786,8 +786,8 @@
         "name": "MangaPill",
         "packageName": "eu.kanade.tachiyomi.extension.en.seluramangapill",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/seluramangapill.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/seluramangapill.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangapill.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangapill.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107006,
@@ -808,8 +808,8 @@
         "name": "MangaKatana",
         "packageName": "eu.kanade.tachiyomi.extension.en.seluramangakatana",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/seluramangakatana.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/seluramangakatana.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangakatana.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangakatana.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107006,
@@ -830,8 +830,8 @@
         "name": "Mangabat",
         "packageName": "eu.kanade.tachiyomi.extension.en.seluramangabat",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/apk/seluramangabat.apk",
-          "iconUrl": "https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/icon/seluramangabat.png"
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangabat.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangabat.png"
         },
         "extensionLib": "1.6",
         "versionCode": 107021,
@@ -843,6 +843,930 @@
             "name": "Mangabat",
             "language": "en",
             "homeUrl": "https://www.mangabats.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "3Hentai",
+        "packageName": "eu.kanade.tachiyomi.extension.all.selurahentai3",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahentai3.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahentai3.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 7352165495179356412,
+            "name": "3Hentai",
+            "language": "all",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4134375515715656999,
+            "name": "3Hentai",
+            "language": "en",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6681081309266581291,
+            "name": "3Hentai",
+            "language": "ja",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8777507252969307410,
+            "name": "3Hentai",
+            "language": "ko",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7008957021483560661,
+            "name": "3Hentai",
+            "language": "zh",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2175272746873340210,
+            "name": "3Hentai",
+            "language": "mo",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9024770800430378299,
+            "name": "3Hentai",
+            "language": "es",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2380982269687257827,
+            "name": "3Hentai",
+            "language": "pt",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 686184716313400527,
+            "name": "3Hentai",
+            "language": "id",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4337733474587551569,
+            "name": "3Hentai",
+            "language": "jv",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6362447851676823470,
+            "name": "3Hentai",
+            "language": "tl",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5513125217964676259,
+            "name": "3Hentai",
+            "language": "vi",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1012880060667844196,
+            "name": "3Hentai",
+            "language": "th",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8380349768029359253,
+            "name": "3Hentai",
+            "language": "my",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8264254813993738450,
+            "name": "3Hentai",
+            "language": "tr",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3401405185185163998,
+            "name": "3Hentai",
+            "language": "ru",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4181325262773235373,
+            "name": "3Hentai",
+            "language": "uk",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8108876773929887607,
+            "name": "3Hentai",
+            "language": "pl",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7316329068932388983,
+            "name": "3Hentai",
+            "language": "fi",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5034144738219247776,
+            "name": "3Hentai",
+            "language": "de",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7431961116171408506,
+            "name": "3Hentai",
+            "language": "it",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5177416170643779745,
+            "name": "3Hentai",
+            "language": "fr",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8832768520600100744,
+            "name": "3Hentai",
+            "language": "nl",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8597517587103919857,
+            "name": "3Hentai",
+            "language": "cs",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4818512282301107405,
+            "name": "3Hentai",
+            "language": "hu",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5036477891965057789,
+            "name": "3Hentai",
+            "language": "bg",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4412178303577275539,
+            "name": "3Hentai",
+            "language": "is",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3414367849893938186,
+            "name": "3Hentai",
+            "language": "la",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8267893980014568131,
+            "name": "3Hentai",
+            "language": "ar",
+            "homeUrl": "https://3hentai.net",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "AllPornComic",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluraallporncomic",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluraallporncomic.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluraallporncomic.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109059,
+        "versionName": "1.6.3059",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 3505927678349344414,
+            "name": "AllPornComic",
+            "language": "en",
+            "homeUrl": "https://allporncomic.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Asura Scans",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluraasurascans",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluraasurascans.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluraasurascans.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 6765589139886466786,
+            "name": "Asura Scans",
+            "language": "en",
+            "homeUrl": "https://asurascans.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Doujins",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluradoujins",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluradoujins.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluradoujins.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 6160309538723809129,
+            "name": "Doujins",
+            "language": "en",
+            "homeUrl": "https://doujins.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Flame Comics",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluraflamecomics",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluraflamecomics.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluraflamecomics.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 9108977625828224331,
+            "name": "Flame Comics",
+            "language": "en",
+            "homeUrl": "https://flamecomics.xyz",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "HDoujin",
+        "packageName": "eu.kanade.tachiyomi.extension.all.selurahdoujin",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahdoujin.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahdoujin.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 6228010724171514281,
+            "name": "HDoujin",
+            "language": "all",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7240561211776957065,
+            "name": "HDoujin",
+            "language": "en",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4081521185801889608,
+            "name": "HDoujin",
+            "language": "es",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1847055427968823009,
+            "name": "HDoujin",
+            "language": "ja",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1268796118775900699,
+            "name": "HDoujin",
+            "language": "ko",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4410226064674928588,
+            "name": "HDoujin",
+            "language": "zh",
+            "homeUrl": "https://hdoujin.org",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Hentai4Free",
+        "packageName": "eu.kanade.tachiyomi.extension.en.selurahentai4free",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahentai4free.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahentai4free.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109059,
+        "versionName": "1.6.3059",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 342631918920825274,
+            "name": "Hentai4Free",
+            "language": "en",
+            "homeUrl": "https://hentai4free.net",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "HentaiHand",
+        "packageName": "eu.kanade.tachiyomi.extension.all.selurahentaihand",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahentaihand.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahentaihand.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109005,
+        "versionName": "1.6.3005",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 5732621128336372716,
+            "name": "HentaiHand",
+            "language": "all",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1193720983871445383,
+            "name": "HentaiHand",
+            "language": "ja",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7591946353688675926,
+            "name": "HentaiHand",
+            "language": "en",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7847573183797974755,
+            "name": "HentaiHand",
+            "language": "zh",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6346946835049903737,
+            "name": "HentaiHand",
+            "language": "bg",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2583434522425718887,
+            "name": "HentaiHand",
+            "language": "ceb",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8646823590639924960,
+            "name": "HentaiHand",
+            "language": "other",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7410918491915191592,
+            "name": "HentaiHand",
+            "language": "tl",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4136775958987092007,
+            "name": "HentaiHand",
+            "language": "ar",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5880467830674567917,
+            "name": "HentaiHand",
+            "language": "el",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8716230801601958888,
+            "name": "HentaiHand",
+            "language": "sr",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1648236408262626745,
+            "name": "HentaiHand",
+            "language": "jv",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7988867991220717444,
+            "name": "HentaiHand",
+            "language": "uk",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5796443198655063592,
+            "name": "HentaiHand",
+            "language": "tr",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 453313201200064650,
+            "name": "HentaiHand",
+            "language": "fi",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1818465653387282250,
+            "name": "HentaiHand",
+            "language": "la",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3267847618930820424,
+            "name": "HentaiHand",
+            "language": "mn",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7660954155490050384,
+            "name": "HentaiHand",
+            "language": "eo",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7456899914375313298,
+            "name": "HentaiHand",
+            "language": "sk",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7860917746158437877,
+            "name": "HentaiHand",
+            "language": "cs",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2954670305889592052,
+            "name": "HentaiHand",
+            "language": "ko",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4252975425846496936,
+            "name": "HentaiHand",
+            "language": "ru",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 585010285897931145,
+            "name": "HentaiHand",
+            "language": "it",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 194158379019407200,
+            "name": "HentaiHand",
+            "language": "es",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4791795231618024801,
+            "name": "HentaiHand",
+            "language": "pt-BR",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5986260966744313550,
+            "name": "HentaiHand",
+            "language": "th",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2069979945737407048,
+            "name": "HentaiHand",
+            "language": "fr",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8174560847681565805,
+            "name": "HentaiHand",
+            "language": "id",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3535872474574234603,
+            "name": "HentaiHand",
+            "language": "vi",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 524109943342977349,
+            "name": "HentaiHand",
+            "language": "de",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3651779164333650401,
+            "name": "HentaiHand",
+            "language": "pl",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4687244701661897410,
+            "name": "HentaiHand",
+            "language": "hu",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5561292839957597001,
+            "name": "HentaiHand",
+            "language": "nl",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5842916767825803126,
+            "name": "HentaiHand",
+            "language": "hi",
+            "homeUrl": "https://hentaihand.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "HentaiRead",
+        "packageName": "eu.kanade.tachiyomi.extension.en.selurahentairead",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahentairead.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahentairead.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "NSFW",
+        "sources": [
+          {
+            "id": 8541462329503743885,
+            "name": "HentaiRead",
+            "language": "en",
+            "homeUrl": "https://hentairead.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Hiperdex",
+        "packageName": "eu.kanade.tachiyomi.extension.en.selurahiperdex",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahiperdex.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahiperdex.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109012,
+        "versionName": "1.6.3012",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 3329749433251571833,
+            "name": "Hiperdex",
+            "language": "en",
+            "homeUrl": "https://hiperdex.tv",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Hive Scans",
+        "packageName": "eu.kanade.tachiyomi.extension.en.selurahivescans",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurahivescans.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurahivescans.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109031,
+        "versionName": "1.6.3031",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 8582763876528670664,
+            "name": "Hive Scans",
+            "language": "en",
+            "homeUrl": "https://hivetoons.org",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "MangaGeko",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangageko",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangageko.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangageko.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 5330336492637025227,
+            "name": "MangaGeko",
+            "language": "en",
+            "homeUrl": "https://www.mgeko.cc",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Mangakakalot",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangakakalot",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangakakalot.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangakakalot.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109019,
+        "versionName": "1.6.3019",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 5690172267177159639,
+            "name": "Mangakakalot",
+            "language": "en",
+            "homeUrl": "https://www.mangakakalot.gg",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Mgread.io",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramgreadio",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramgreadio.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramgreadio.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109004,
+        "versionName": "1.6.3004",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 3099067690292203631,
+            "name": "Mgread.io",
+            "language": "en",
+            "homeUrl": "https://mgread.io",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "ToonGod",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluratoongod",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluratoongod.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluratoongod.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109059,
+        "versionName": "1.6.3059",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 326646432363786913,
+            "name": "ToonGod",
+            "language": "en",
+            "homeUrl": "https://www.toongod.org",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Toonily",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluratoonily",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluratoonily.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluratoonily.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109059,
+        "versionName": "1.6.3059",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 7472468302989132985,
+            "name": "Toonily",
+            "language": "en",
+            "homeUrl": "https://toonily.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Vortex Scans",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluravortexscans",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluravortexscans.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluravortexscans.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109031,
+        "versionName": "1.6.3031",
+        "contentWarning": "SAFE",
+        "sources": [
+          {
+            "id": 4552064481267507798,
+            "name": "Vortex Scans",
+            "language": "en",
+            "homeUrl": "https://vortexscans.org",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "WebtoonXYZ",
+        "packageName": "eu.kanade.tachiyomi.extension.en.selurawebtoonxyz",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurawebtoonxyz.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurawebtoonxyz.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 109059,
+        "versionName": "1.6.3059",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 6159106195378660862,
+            "name": "WebtoonXYZ",
+            "language": "en",
+            "homeUrl": "https://www.webtoon.xyz",
             "mirrorUrls": [],
             "message": null
           }
