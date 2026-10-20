@@ -48,41 +48,28 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Require private release read-only token
+      - name: Download verified public release APKs
         env:
-          PRIVATE_RELEASE_TOKEN: ${{ secrets.SELURA_READER_READ_TOKEN }}
-        run: |
-          if [ -z "$PRIVATE_RELEASE_TOKEN" ]; then
-            echo "::error::Missing SELURA_READER_READ_TOKEN repository secret. Set a fine-grained read-only Contents token restricted to john-selwyn/selura-reader."
-            exit 1
-          fi
-      - name: Download the two previously tested signed APKs
-        env:
-          GH_TOKEN: ${{ secrets.SELURA_READER_READ_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/private-apks"
+          mkdir -p "$RUNNER_TEMP/source-apks"
+          reader_repo="zexaldragneel/selura-reader"
           gh release download test-selura-source-pr-25-run-12 \
-            --repo john-selwyn/selura-reader \
-            --pattern selura-nhentai.apk \
-            --dir "$RUNNER_TEMP/private-apks"
+            --repo "$reader_repo" --pattern selura-nhentai.apk \
+            --dir "$RUNNER_TEMP/source-apks"
           gh release download test-selura-mangadex-pr-26-run-3 \
-            --repo john-selwyn/selura-reader \
-            --pattern selura-mangadex.apk \
-            --dir "$RUNNER_TEMP/private-apks"
-          test -s "$RUNNER_TEMP/private-apks/selura-nhentai.apk"
-          test -s "$RUNNER_TEMP/private-apks/selura-mangadex.apk"
-          # Add six independently signed APKs, only after the pinned private
-          # build completes successfully. This release tag must remain exact.
+            --repo "$reader_repo" --pattern selura-mangadex.apk \
+            --dir "$RUNNER_TEMP/source-apks"
           gh release download test-selura-batch-pr-28-run-6 \
-            --repo john-selwyn/selura-reader \
-            --pattern '*.apk' \
-            --dir "$RUNNER_TEMP/private-apks"
-          for apk in seluramangaplus selurawebtoons seluramangafire seluramangapill seluramangakatana seluramangabat; do
-            test -s "$RUNNER_TEMP/private-apks/$apk.apk"
-          done
-          test "$(find "$RUNNER_TEMP/private-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 8
-          echo "All eight signed release files retrieved from the private Selura release repo."
+            --repo "$reader_repo" --pattern '*.apk' \
+            --dir "$RUNNER_TEMP/source-apks"
+          gh release download test-orphaned-18-pr-29-run-4 \
+            --repo "$reader_repo" --pattern '*.apk' \
+            --dir "$RUNNER_TEMP/source-apks"
+          # Exactly 2 legacy + 6 batch + 18 isolated extensions, no extras.
+          test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 26
+          echo "26 published and signed APKs downloaded; individual signer and package checks run during generation."
       - name: Generate public index, icons, APKs and manifest
         run: |
           set -euo pipefail
@@ -91,7 +78,7 @@ jobs:
           APKSIGNER="$(find "$sdk_dir/build-tools" -type f -name apksigner | sort -V | tail -1)"
           test -x "$AAPT" && test -x "$APKSIGNER"
           python3 scripts/generate_store.py \
-            --apk-dir "$RUNNER_TEMP/private-apks" \
+            --apk-dir "$RUNNER_TEMP/source-apks" \
             --output-dir "$RUNNER_TEMP/public-store" \
             --aapt "$AAPT" \
             --apksigner "$APKSIGNER"
@@ -102,7 +89,14 @@ jobs:
           for apk in seluramangaplus selurawebtoons seluramangafire seluramangapill seluramangakatana seluramangabat; do
             test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
           done
-          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 8
+          for apk in selurahentai3 seluraallporncomic seluraasurascans seluradoujins \
+            seluraflamecomics selurahdoujin selurahentai4free selurahentaihand \
+            selurahentairead selurahiperdex selurahivescans seluramangageko \
+            seluramangakakalot seluramgreadio seluratoongod seluratoonily \
+            seluravortexscans selurawebtoonxyz; do
+            test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
+          done
+          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 26
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
       - name: Publish generated files on dedicated public repo branch
         run: |
@@ -128,4 +122,4 @@ jobs:
           fi
       - name: Show the add-store URL
         run: |
-          echo "Selura store: https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/repo.json"
+          echo "Selura store: https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/repo.json"

@@ -15,7 +15,7 @@ import shutil
 import subprocess
 from zipfile import ZipFile
 
-OWNER = "john-selwyn"
+OWNER = "zexaldragneel"
 REPOSITORY = "selura-extensions"
 RAW_BASE = f"https://raw.githubusercontent.com/{OWNER}/{REPOSITORY}/repo"
 SITE_URL = f"https://github.com/{OWNER}/{REPOSITORY}"
@@ -32,7 +32,7 @@ MANGADEX_LANGUAGES = (
 NHENTAI_LANGUAGES = ("all", "en", "ja", "zh")
 # Natural store listing titles. The first two preserve the existing source
 # IDs based on their original "Selura ..." name, so old manga still open.
-EXTENSIONS = (
+BASE_EXTENSIONS = (
     {
         "filename": "selura-nhentai.apk",
         "name": "NHentai",
@@ -108,6 +108,191 @@ EXTENSIONS = (
         "languages": ("en",),
     },
 )
+
+
+# Pinned, CI-verified release: test-orphaned-18-pr-29-run-4.
+# Immutable source identity family versionId=7301, distinct from existing
+# original/Keiyoushi library entries. Historical explicit IDs use the same
+# stable SHA-256 remap as selura-reader/selura_extensions/orphaned_sources.py.
+ORPHANED_SOURCE_VERSION = 7301
+ORPHANED_EXTENSIONS = (
+    {
+        "filename": "selurahentai3.apk",
+        "name": "3Hentai",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.selurahentai3",
+        "url": "https://3hentai.net",
+        "warning": "NSFW",
+        "languages": ("all", "en", "ja", "ko", "zh", "mo", "es", "pt", "id", "jv", "tl", "vi", "th", "my", "tr", "ru", "uk", "pl", "fi", "de", "it", "fr", "nl", "cs", "hu", "bg", "is", "la", "ar"),
+        "explicit_old_ids": {"pl": "7940950215101782907"},
+    },
+    {
+        "filename": "seluraallporncomic.apk",
+        "name": "AllPornComic",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluraallporncomic",
+        "url": "https://allporncomic.com",
+        "warning": "NSFW",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluraasurascans.apk",
+        "name": "Asura Scans",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluraasurascans",
+        "url": "https://asurascans.com",
+        "warning": "SAFE",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluradoujins.apk",
+        "name": "Doujins",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluradoujins",
+        "url": "https://doujins.com",
+        "warning": "NSFW",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluraflamecomics.apk",
+        "name": "Flame Comics",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluraflamecomics",
+        "url": "https://flamecomics.xyz",
+        "warning": "SAFE",
+        "languages": ("en",),
+        "explicit_old_ids": {"en": "8531542650987673943"},
+    },
+    {
+        "filename": "selurahdoujin.apk",
+        "name": "HDoujin",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.selurahdoujin",
+        "url": "https://hdoujin.org",
+        "warning": "NSFW",
+        "languages": ("all", "en", "es", "ja", "ko", "zh"),
+        "explicit_old_ids": {"ko": "8377507648400729012"},
+    },
+    {
+        "filename": "selurahentai4free.apk",
+        "name": "Hentai4Free",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.selurahentai4free",
+        "url": "https://hentai4free.net",
+        "warning": "NSFW",
+        "languages": ("en",),
+    },
+    {
+        "filename": "selurahentaihand.apk",
+        "name": "HentaiHand",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.selurahentaihand",
+        "url": "https://hentaihand.com",
+        "warning": "NSFW",
+        "languages": ("all", "ja", "en", "zh", "bg", "ceb", "other", "tl", "ar", "el", "sr", "jv", "uk", "tr", "fi", "la", "mn", "eo", "sk", "cs", "ko", "ru", "it", "es", "pt-BR", "th", "fr", "id", "vi", "de", "pl", "hu", "nl", "hi"),
+        "explicit_old_ids": {"all": "1235047015955289468", "other": "7302549142935671434", "pt-BR": "2516244587139644000"},
+    },
+    {
+        "filename": "selurahentairead.apk",
+        "name": "HentaiRead",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.selurahentairead",
+        "url": "https://hentairead.com",
+        "warning": "NSFW",
+        "languages": ("en",),
+    },
+    {
+        "filename": "selurahiperdex.apk",
+        "name": "Hiperdex",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.selurahiperdex",
+        "url": "https://hiperdex.tv",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "selurahivescans.apk",
+        "name": "Hive Scans",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.selurahivescans",
+        "url": "https://hivetoons.org",
+        "warning": "SAFE",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramangageko.apk",
+        "name": "MangaGeko",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangageko",
+        "url": "https://www.mgeko.cc",
+        "warning": "MIXED",
+        "languages": ("en",),
+        "explicit_old_ids": {"en": "734865402529567092"},
+    },
+    {
+        "filename": "seluramangakakalot.apk",
+        "name": "Mangakakalot",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangakakalot",
+        "url": "https://www.mangakakalot.gg",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluramgreadio.apk",
+        "name": "Mgread.io",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramgreadio",
+        "url": "https://mgread.io",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluratoongod.apk",
+        "name": "ToonGod",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluratoongod",
+        "url": "https://www.toongod.org",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluratoonily.apk",
+        "name": "Toonily",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluratoonily",
+        "url": "https://toonily.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluravortexscans.apk",
+        "name": "Vortex Scans",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluravortexscans",
+        "url": "https://vortexscans.org",
+        "warning": "SAFE",
+        "languages": ("en",),
+    },
+    {
+        "filename": "selurawebtoonxyz.apk",
+        "name": "WebtoonXYZ",
+        "source_id_version": ORPHANED_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.selurawebtoonxyz",
+        "url": "https://www.webtoon.xyz",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+)
+EXTENSIONS = BASE_EXTENSIONS + ORPHANED_EXTENSIONS
+
+
+def alternate_orphan_id(package_suffix: str, old_id: str) -> int:
+    """Mirror the immutable remap already used in the built extension modules."""
+    seed = ("selura-orphaned-v1:" + package_suffix + ":" + old_id).encode("utf-8")
+    return (int.from_bytes(hashlib.sha256(seed).digest()[:8], "big") & ((1 << 63) - 1)) or 1
+
+
 
 
 def source_id(name: str, language: str, version_id: int = 1) -> int:
@@ -207,7 +392,18 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
                 "contentWarning": spec["warning"],
                 "sources": [
                     {
-                        "id": source_id(spec.get("source_id_name", spec["name"]), language, spec["source_id_version"]),
+                        "id": (
+                            alternate_orphan_id(
+                                spec["package"].rsplit(".", 1)[-1],
+                                spec["explicit_old_ids"][language],
+                            )
+                            if language in spec.get("explicit_old_ids", {})
+                            else source_id(
+                                spec.get("source_id_name", spec["name"]),
+                                language,
+                                spec["source_id_version"],
+                            )
+                        ),
                         "name": spec["name"],
                         "language": language,
                         "homeUrl": spec["url"],
