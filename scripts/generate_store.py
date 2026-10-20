@@ -86,7 +86,7 @@ def metadata(apk: Path, aapt: str, apksigner: str) -> dict:
         "package": m.group(1),
         "code": int(m.group(2)),
         "name": m.group(3),
-        "sha1": digest("1"),
+        "sha256": sha256,
     }
 
 
@@ -102,10 +102,13 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
             raise ValueError(f"Unexpected Android version for {spec['name']}")
         apk_metadata[spec["filename"]] = info
 
-    signers = {item["sha1"] for item in apk_metadata.values()}
+    # Mihon ExtensionLoader.getSignatures compares SHA-256 (not SHA-1).
+    signers = {item["sha256"] for item in apk_metadata.values()}
     if len(signers) != 1:
         raise ValueError("Extension APK signer identities do not match")
-    sha1 = signers.pop()
+    signer_sha256 = signers.pop()
+    if signer_sha256 != EXPECTED_CERT_SHA256:
+        raise ValueError("Unexpected signing certificate for Selura extension store")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "apk").mkdir(exist_ok=True)
@@ -158,7 +161,7 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
     index = {
         "name": "Selura Extensions",
         "badgeLabel": "Selura",
-        "signingKey": sha1,
+        "signingKey": signer_sha256,
         "contact": {"website": SITE_URL, "discord": None},
         "extensionList": {"extensions": extensions},
         "extensionListUrl": None,
@@ -169,7 +172,7 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
             "name": "Selura Extensions",
             "shortName": "Selura",
             "website": SITE_URL,
-            "signingKeyFingerprint": sha1,
+            "signingKeyFingerprint": signer_sha256,
         },
     }
     (output_dir / "index.json").write_text(
