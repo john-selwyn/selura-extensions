@@ -1,54 +1,43 @@
 # Selura Extension Store — Maintenance
 
-## Architecture
+## Repositories
 
-- Public store: `john-selwyn/selura-extensions` (this repository).
-- Private development: `john-selwyn/selura-reader`, extension PR #25 and PR #26.
-- Signed release artifacts: two **already built and signed** APKs from the private repository.
-- Public generated branch: `repo`, containing `repo.json`, `index.json`, `apk/` and `icon/`. The branch is created **only after a successful publication workflow**.
-- Store URL for Android (do not add until published):
-  `https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/repo.json`
+- **Android reader and signed source builds:** [zexaldragneel/selura-reader](https://github.com/zexaldragneel/selura-reader), including source-extension PRs #25–#29.
+- **Public extension catalog and publication:** [zexaldragneel/selura-extensions](https://github.com/zexaldragneel/selura-extensions).
+- **Stable catalog endpoint:** `https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/repo.json`.
+- **Generated store:** `repo` branch containing `repo.json`, `index.json`, `apk/` and `icon/`.
 
-Mihon-compatible JSON `repo.json` redirects to `index.json`; this uses the same model fields as the Mihon extension store. Published icons are extracted from the signed source APKs. Both packages are independent from official Yuzono and Keiyoushi packages, so **do not uninstall other extensions**.
+Both repositories are public. **No personal-access token is needed** for the publisher to read already-public release APKs: use the automatic GitHub Actions `github.token` for read-only public release download. Never put a personal token into source code, workflows, issues, PR text or chat; rotate unused older tokens through GitHub settings. Signing keys stay confined to the reader build workflow.
 
-## One-time account setup — read-only token
+## Signed source releases
 
-GitHub's default `GITHUB_TOKEN` cannot read the owner's separate private repository. A narrowly scoped fine-grained personal access token is required **only to download existing signed release APKs**, not to compile or sign code.
+The publisher retrieves pinned **immutable** APK release tags from the reader repository:
 
-1. Open https://github.com/settings/personal-access-tokens/new and set token name `Selura public extension store read access`.
-2. Resource owner: `john-selwyn`. Select **Only select repositories** → `selura-reader`.
-3. Repository permissions → **Contents: Read-only** (Metadata: Read automatically).
-4. Choose an expiration/renewal plan. Generate the token and copy the token value immediately. **Never paste it in ChatGPT, an issue, PR, public source file or commit**.
-5. Visit https://github.com/john-selwyn/selura-extensions/settings/secrets/actions, select **New repository secret**:
-   - Name: `SELURA_READER_READ_TOKEN`
-   - Secret: paste the new token
-6. Once the workflow is merged into `main`, open https://github.com/john-selwyn/selura-extensions/actions/workflows/publish-store.yml and click **Run workflow** on `main`.
+| Source batch | Verified release |
+| --- | --- |
+| Original NHentai | `test-selura-source-pr-25-run-12` |
+| Original MangaDex | `test-selura-mangadex-pr-26-run-3` |
+| Six established extensions | `test-selura-batch-pr-28-run-6` |
+| 18 orphaned extensions (excluding NHentai) | `test-orphaned-18-pr-29-run-4` |
 
-The token is read-only for `selura-reader`. Publication uses this public repository's own short-lived Actions `GITHUB_TOKEN` with `contents: write`, scoped to `selura-extensions`. The production signing certificate **never leaves the private repository**; no encrypted keystore or signing password is exposed here.
+Never change the current original APK identities, already-published source IDs or signing certificate during catalog updates. Existing 8 source packages remain byte-identical to their pinned releases; the 18 new source packages use their own fixed source ID family and package names. Physical device confirmation of the new sources remains an acceptance gate.
 
-## Release / verification protocol
+## Publishing process
 
-The publisher pulls these pinned and previously verified releases:
+1. Make changes to `scripts/generate_store.py`, corresponding tests and the pinned releases in `.github/workflows/publish-store.yml` on a feature branch.
+2. Run the pull-request CI tests; reject missing or incorrectly signed APKs, wrong manifest package identities, duplicate packages, and invalid versions.
+3. Merge only after passing PR checks. The `main` push runs tests but does not publish unless the commit explicitly includes `[publish-selura-store]`; publishing can also be started manually on `main`.
+4. Open [Publish Selura Extension Store](https://github.com/zexaldragneel/selura-extensions/actions/workflows/publish-store.yml), click **Run workflow** on `main` if a merge did not publish.
+5. The job downloads all 26 prebuilt source APKs, verifies every package and signing certificate SHA-256, extracts icons, generates a 26-item index and replaces generated contents of the `repo` branch **only** after all checks succeed.
+6. Verify the public `repo.json`, `index.json`, 26 APKs and 26 icons are reachable under the new owner. Then refresh **Extension stores** and **Extensions** in Selura Manga and test installation/search/chapter pages on Android.
 
-| Extension | Private release tag | File |
-| --- | --- | --- |
-| Selura NHentai v2 (Android-tested) | `test-selura-source-pr-25-run-12` | `selura-nhentai.apk` |
-| Selura MangaDex (CI-passed, phone test pending) | `test-selura-mangadex-pr-26-run-3` | `selura-mangadex.apk` |
+The release index uses signer SHA-256
+`da9cfd25f9b1c694b585d427e5faa8c9a1d052b8d846051fbe1569d65c851d42`. Do not publish a different signing identity, since Android would reject updates and Mihon checks store trust against the certificate.
 
-Before publishing, CI verifies Android APK signatures, checks SHA-256 against the expected existing Selura certificate, enforces distinct packages, reads real `versionCode` and `versionName` from Android manifests, and generates exact-language source IDs using upstream's documented MD5 ID algorithm. Any failure prevents store publication. Both APKs must share the expected certificate.
+## Data compatibility
 
-**Important:** Real users must still test the store add/install flow and Selura MangaDex browse/chapters on Android. Successful compilation and store metadata checks do not prove online source functionality.
-
-### Updating extensions
-
-New APKs must first be built and device-checked in the private source repo with the **same signing key** and monotonically increasing Android `versionCode`. Then update the release tags in `.github/workflows/publish-store.yml` through a reviewed PR, run unit tests and repeat the manual publication. The `repo` branch and URL stay stable while APKs and index versions update.
-
-Do not copy Keiyoushi's full extension feed, third-party extensions or untested binaries into this store without an explicit supported-source and licensing decision. Do not overwrite user library source IDs, downloads, or reading history as part of store updates.
-
-## Security notes
-
-- The PAT is read-only for the separate private repository and stored only in GitHub Actions secrets.
-- Workflow permission to write is limited to this public repository's generated `repo` branch.
-- PR test jobs do **not** receive the private token and cannot publish.
-- Never publish the private signing key, encrypted keystore, secret password, private repository source, or credentials.
-- Store catalogs and APKs are public once released. Only licensed/open-source components and authorized source integrations are supported.
+- Existing NHentai/MangaDex and six previously published extensions remain unchanged; keep the original source ID derivation for each language.
+- 18 new extensions use distinct Android APK package identities, `source.versionId = 7301`, and deterministic SHA-256 based remapping of pinned explicit legacy IDs. Preserve all these for future updates.
+- The store only changes downloadable metadata, not the device library, categories, bookmarks, reading progress or downloaded chapters. Do not silently migrate or replace entries.
+- Source builds are Apache-2.0 derivatives pinned to Keiyoushi at `ff521c17bb3e503c01e658e8fac00b60a95829f3`, not yet wholly independent from its shared Gradle/build code.
+- Do not claim actual online source functionality without device tests. Never bypass site authentication or restrictions.
