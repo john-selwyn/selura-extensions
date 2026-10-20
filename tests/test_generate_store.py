@@ -46,7 +46,7 @@ class CatalogTests(unittest.TestCase):
             ]
             with patch.object(module, "metadata", side_effect=inputs):
                 index = module.generate(base, base / "publish", "aapt", "apksigner")
-            self.assertEqual(len(index["extensionList"]["extensions"]), 2)
+            self.assertEqual(len(index["extensionList"]["extensions"]), 8)
             self.assertEqual(index["signingKey"],
                              module.EXPECTED_CERT_SHA256)
             listing = json.loads((base / "publish/index.json").read_text())
@@ -54,6 +54,22 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(listing["signingKey"], module.EXPECTED_CERT_SHA256)
             self.assertEqual(len(listing["signingKey"]), 64)
             self.assertEqual(listing["extensionList"]["extensions"][0]["contentWarning"], "NSFW")
+            self.assertEqual(listing["extensionList"]["extensions"][0]["name"], "NHentai")
+            self.assertEqual(listing["extensionList"]["extensions"][1]["name"], "MangaDex")
+            self.assertEqual(
+                listing["extensionList"]["extensions"][0]["sources"][0]["id"],
+                module.source_id("Selura NHentai", "all"),
+            )
+            self.assertEqual(
+                listing["extensionList"]["extensions"][1]["sources"][0]["id"],
+                module.source_id("Selura MangaDex", module.MANGADEX_LANGUAGES[0]),
+            )
+            self.assertTrue(all(not e["name"].startswith("Selura ") for e in listing["extensionList"]["extensions"]))
+            self.assertEqual(len({e["packageName"] for e in listing["extensionList"]["extensions"]}), 8)
+            self.assertEqual(
+                listing["extensionList"]["extensions"][2]["sources"][0]["id"],
+                module.source_id("MANGA Plus by SHUEISHA", "en", 2),
+            )
             self.assertEqual(listing["extensionList"]["extensions"][1]["contentWarning"], "MIXED")
             for entry in listing["extensionList"]["extensions"]:
                 self.assertTrue(entry["resources"]["apkUrl"].startswith(module.RAW_BASE))
@@ -81,10 +97,9 @@ class CatalogTests(unittest.TestCase):
             for item in module.EXTENSIONS:
                 (base / item["filename"]).write_bytes(b"apk bytes placeholder")
             with patch.object(module, "metadata", side_effect=[
-                {"package": module.EXTENSIONS[0]["package"], "code": 1,
-                 "name": "1.4.2", "sha256": "a" * 64},
-                {"package": module.EXTENSIONS[1]["package"], "code": 2,
-                 "name": "1.6.3", "sha256": "b" * 64},
+                {"package": ext["package"], "code": i+1,
+                 "name": "1.6.3", "sha256": ("b" if i == 1 else "a") * 64}
+                for i, ext in enumerate(module.EXTENSIONS)
             ]):
                 with self.assertRaisesRegex(ValueError, "signer identities do not match"):
                     module.generate(base, base / "publish", "aapt", "apksigner")
