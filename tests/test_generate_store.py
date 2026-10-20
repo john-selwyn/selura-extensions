@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 from zipfile import ZipFile
 
-script = Path(__file__).resolve().parents[1] / "generate_store.py"
+script = Path(__file__).resolve().parents[1] / "scripts" / "generate_store.py"
 spec = importlib.util.spec_from_file_location("selura_store_generator", script)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
