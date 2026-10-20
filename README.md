@@ -4,18 +4,22 @@ An independently managed **extension store** for the [Selura Manga Android reade
 
 This repository distributes Selura-maintained Android manga source extensions. It is not affiliated with the official Mihon, Keiyoushi or Yūzōnō projects.
 
-## Current extensions (pending store publication)
+## Available extensions
 
 - **Selura NHentai v2** — a separately packaged, optimized nHentai.net adapter. Adult content; for authorized adult users only. Based on appropriately attributed Apache-2.0 Yūzōnō source.
 - **Selura MangaDex** — a separately packaged, Keiyoushi-derived MangaDex adapter. Based on appropriately attributed Apache-2.0 Keiyoushi source.
 
-The original sources, signed APKs and recorded CI builds are currently in the owner's **private** `selura-reader` repository. The public store will publish the **already-signed** APKs and a Mihon-compatible JSON index without disclosing the signing key or private repository code.
+The source code and original verified CI builds are maintained in the owner's **private** `selura-reader` repository. This public repository hosts the independently **signed APKs** and a Mihon-compatible JSON index without exposing the signing key or private repository code. Public catalog generated from signed releases by [GitHub Actions run #39410027167](https://github.com/john-selwyn/selura-extensions/actions/runs/39410027167).
 
 ## Android setup
 
-The store URL will be published once the GitHub Actions **Publish Selura Extension Store** workflow completes successfully. Do **not** add a placeholder URL until its index and APKs are publicly accessible.
+**Add Selura Extensions using this verified URL:**
 
-After publication, use Selura Manga → Browse → Extensions → Extension stores → Add and paste the published `repo.json` URL. Existing Keiyoushi and Yūzōnō stores remain independent and should not be removed.
+`https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/repo.json`
+
+The [live catalog](https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/index.json) currently lists two extensions. Its APKs and icons are published on the [`repo` branch](https://github.com/john-selwyn/selura-extensions/tree/repo). This is a public extension catalog, not an APK or app install URL.
+
+On Android, use Selura Manga → Browse → Extensions → Extension stores → Add and paste the `repo.json` URL shown above. Existing Keiyoushi and Yūzōnō stores remain independent and should not be removed.
 
 ## Security and source migration
 
