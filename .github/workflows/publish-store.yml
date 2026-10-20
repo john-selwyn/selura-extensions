@@ -69,7 +69,7 @@ jobs:
             --dir "$RUNNER_TEMP/source-apks"
           # Reader PR #32 CI publishes this immutable batch only after all
           # 12 release APKs pass Gradle build/lint/signature validation.
-          gh release download test-expansion-12-pr-32-run-1 \
+          gh release download test-expansion-12-pr-32-run-2 \
             --repo "$reader_repo" --pattern '*.apk' \
             --dir "$RUNNER_TEMP/source-apks"
           # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion, no extras.
