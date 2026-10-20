@@ -67,9 +67,14 @@ jobs:
           gh release download test-orphaned-18-pr-29-run-4 \
             --repo "$reader_repo" --pattern '*.apk' \
             --dir "$RUNNER_TEMP/source-apks"
-          # Exactly 2 legacy + 6 batch + 18 isolated extensions, no extras.
-          test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 26
-          echo "26 published and signed APKs downloaded; individual signer and package checks run during generation."
+          # Reader PR #32 CI publishes this immutable batch only after all
+          # 12 release APKs pass Gradle build/lint/signature validation.
+          gh release download test-expansion-12-pr-32-run-1 \
+            --repo "$reader_repo" --pattern '*.apk' \
+            --dir "$RUNNER_TEMP/source-apks"
+          # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion, no extras.
+          test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 38
+          echo "38 published and signed APKs downloaded; individual signer and package checks run during generation."
       - name: Generate public index, icons, APKs and manifest
         run: |
           set -euo pipefail
@@ -96,7 +101,13 @@ jobs:
             seluravortexscans selurawebtoonxyz; do
             test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
           done
-          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 26
+          for apk in seluracomicklive seluraglobalcomix seluramangatoon seluramangaup \
+            seluramangapluscreators seluranamicomi seluradynasty \
+            seluragunnerkriggcourt seluramangago seluramangahere seluramangafox \
+            seluramanganato; do
+            test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
+          done
+          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 38
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
       - name: Publish generated files on dedicated public repo branch
         run: |
