@@ -1,38 +1,36 @@
 # Selura Extensions
 
-An independently managed **extension store** for the [Selura Manga Android reader](https://github.com/john-selwyn/selura-reader).
+Independent public extension catalog for [Selura Manga](https://github.com/zexaldragneel/selura-reader), built with the native Mihon Android engine. Selura is not affiliated with Mihon, Keiyoushi or Yūzōnō.
 
-This repository distributes Selura-maintained Android manga source extensions. It is not affiliated with the official Mihon, Keiyoushi or Yūzōnō projects.
+## Extension store URL (unchanged Android experience)
 
-## Available extensions — 8 signed APKs
+```
+https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/repo.json
+```
 
-| Extension name shown in the catalog | Original provider / type |
-| --- | --- |
-| NHentai | nHentai.net, adults only; optimized Yūzōnō-derived adapter |
-| MangaDex | MangaDex, Keiyoushi-derived adapter |
-| MANGA Plus by SHUEISHA | Official Shueisha manga service |
-| Webtoons.com | Webtoons and webcomics |
-| MangaFire | Manga source |
-| MangaPill | Manga source |
-| MangaKatana | Manga source |
-| Mangabat | Manga source |
+The store maintains **26 separately signed manga extensions**: 8 pre-existing source packages plus the 18 new orphaned-source derivatives (NHentai is **not** duplicated). Provider names appear naturally, without a "Selura" prefix.
 
-The store **does not prepend “Selura” to catalog titles**. Existing MangaDex and NHentai APK package identities and source IDs remain unchanged to preserve library compatibility. Their currently installed extension labels may still reflect older APK branding; updating them safely is a separate milestone.
+The original 8 are NHentai, MangaDex, MANGA Plus by SHUEISHA, Webtoons.com, MangaFire, MangaPill, MangaKatana and Mangabat.
 
-The public catalog is updated by [the successful eight-extension publication run](https://github.com/john-selwyn/selura-extensions/actions/runs/39415154196). Signed APK builds and source files remain in the separate **private** `selura-reader` repository; the public store contains only verified signed APKs, icons and its index. No signing private keys are published.
+The new 18 are 3Hentai, AllPornComic, Asura Scans, Doujins, Flame Comics, HDoujin, Hentai4Free, HentaiHand, HentaiRead, Hiperdex, Hive Scans, MangaGeko, Mangakakalot, Mgread.io, ToonGod, Toonily, Vortex Scans and WebtoonXYZ. Some are adult-only; the reader may hide them depending on content filters.
 
-## Android setup
+**Build and repository publishing are not evidence that a content provider works at runtime.** Test extensions on Android before relying on them.
 
-**Add Selura Extensions using this verified URL:**
+## How to use
 
-`https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/repo.json`
+1. In Selura Manga open **Browse → Extensions → Extension stores**.
+2. If Selura Extensions already exists, refresh the store. Otherwise, add the `repo.json` URL above. Keep the previous entry until the new catalog is verified; do not delete your other repositories.
+3. Return to **Browse → Extensions** and refresh. The 26 entries should appear with individual download icons when the published catalog is live.
+4. Install one or two sources and trust them in Selura. Search for manga, read an entire chapter and verify existing library entries are still available.
 
-The [live catalog](https://raw.githubusercontent.com/john-selwyn/selura-extensions/repo/index.json) currently lists eight extensions. Its APKs and icons are published on the [`repo` branch](https://github.com/john-selwyn/selura-extensions/tree/repo). This is a public extension catalog, not an APK or app install URL.
+The catalog endpoint contains the JSON metadata and public signed APK/icon URLs. The main Selura Android APK and existing reading data are not altered by a store update.
 
-On Android, use Selura Manga → Browse → Extensions → Extension stores → Refresh (if already added), then return to the Extensions list and refresh it. For a first-time setup, tap Add and paste the `repo.json` URL above. Existing Keiyoushi and Yūzōnō stores remain independent and should not be removed.
+## Release ownership and source identity
 
-## Security and source migration
+- `zexaldragneel/selura-reader` builds and signs APKs in GitHub Actions and publishes immutable prereleases.
+- This repository publishes **verified** APKs and a Mihon-compatible `index.json` from those immutable releases. No private signing key is published or imported.
+- The original 8 Android packages and source IDs remain unchanged.
+- The new 18 use distinct `selura...` internal Android packages and the immutable `versionId=7301` source family. Legacy explicit source IDs are remapped deterministically to avoid taking over already-installed source identities; the new source IDs must not change after publishing.
+- Apache-2.0 upstream licensing and required attribution are preserved. Providers' login rules and access controls must be respected.
 
-The extension APKs use the existing Selura signing certificate. This store does **not** relabel third-party APKs as official upstream builds, bypass providers' authentication, silently replace installed extensions, or migrate library entries to new source IDs. Preserve reading history and downloads; perform source migration separately with backup protection.
-
-Development and automated release controls are documented in [STORE_MAINTENANCE.md](STORE_MAINTENANCE.md).
+See [STORE_MAINTENANCE.md](STORE_MAINTENANCE.md) for security, signing verification, and publishing details.
