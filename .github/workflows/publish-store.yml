@@ -72,7 +72,17 @@ jobs:
             --dir "$RUNNER_TEMP/private-apks"
           test -s "$RUNNER_TEMP/private-apks/selura-nhentai.apk"
           test -s "$RUNNER_TEMP/private-apks/selura-mangadex.apk"
-          echo "Verified release files obtained from owner-authorized private source."
+          # Add six independently signed APKs, only after the pinned private
+          # build completes successfully. This release tag must remain exact.
+          gh release download test-selura-batch-pr-28-run-3 \
+            --repo john-selwyn/selura-reader \
+            --pattern '*.apk' \
+            --dir "$RUNNER_TEMP/private-apks"
+          for apk in seluramangaplus selurawebtoons seluramangafire seluramangapill seluramangakatana seluramangabat; do
+            test -s "$RUNNER_TEMP/private-apks/$apk.apk"
+          done
+          test "$(find "$RUNNER_TEMP/private-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 8
+          echo "All eight signed release files retrieved from the private Selura release repo."
       - name: Generate public index, icons, APKs and manifest
         run: |
           set -euo pipefail
@@ -89,6 +99,10 @@ jobs:
           test -s "$RUNNER_TEMP/public-store/repo.json"
           test -s "$RUNNER_TEMP/public-store/apk/selura-nhentai.apk"
           test -s "$RUNNER_TEMP/public-store/apk/selura-mangadex.apk"
+          for apk in seluramangaplus selurawebtoons seluramangafire seluramangapill seluramangakatana seluramangabat; do
+            test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
+          done
+          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 8
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
       - name: Publish generated files on dedicated public repo branch
         run: |
