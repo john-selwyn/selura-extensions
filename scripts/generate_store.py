@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""Publish a Mihon/Selura-compatible JSON extension store from verified signed APKs.
+
+No private repository credentials or signing keys are read by this program.
+Input APKs are supplied by the GitHub Actions workflow with read-only access.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+import shutil
+import subprocess
+from zipfile import ZipFile
+
+OWNER = "john-selwyn"
+REPOSITORY = "selura-extensions"
+RAW_BASE = f"https://raw.githubusercontent.com/{OWNER}/{REPOSITORY}/repo"
+SITE_URL = f"https://github.com/{OWNER}/{REPOSITORY}"
+EXPECTED_CERT_SHA256 = "da9cfd25f9b1c694b585d427e5faa8c9a1d052b8d846051fbe1569d65c851d42"
+
+# Exact source language declarations from pinned Keiyoushi MangaDex Gradle source.
+MANGADEX_LANGUAGES = (
+    "af", "sq", "ar", "az", "eu", "be", "bn", "bg", "my", "ca", "zh-Hans", "zh-Hant",
+    "cv", "hr", "cs", "da", "nl", "en", "eo", "et", "fil", "fi", "fr", "ka", "de",
+    "el", "he", "hi", "hu", "ga", "id", "it", "ja", "jv", "kk", "ko", "la", "lt",
+    "ms", "mn", "ne", "no", "fa", "pl", "pt-BR", "pt", "ro", "ru", "sr", "sk",
+    "es-419", "es", "sv", "ta", "te", "th", "tr", "uk", "ur", "uz", "vi",
+)
+NHENTAI_LANGUAGES = ("all", "en", "ja", "zh")
+EXTENSIONS = (
+    {
+        "filename": "selura-nhentai.apk",
+        "name": "Selura NHentai",
+        "package": "eu.kanade.tachiyomi.extension.all.seluranhentai",
+        "url": "https://nhentai.net",
+        "warning": "NSFW",
+        "languages": NHENTAI_LANGUAGES,
+    },
+    {
+        "filename": "selura-mangadex.apk",
+        "name": "Selura MangaDex",
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangadex",
+        "url": "https://mangadex.org",
+        "warning": "MIXED",
+        "languages": MANGADEX_LANGUAGES,
+    },
+)
+
+
+def source_id(name: str, language: str, version_id: int = 1) -> int:
+    """Match Keiyoushi's Java MD5-derived source ID algorithm exactly."""
+    key = f"{name.lower()}/{language}/{version_id}".encode("utf-8")
+    return int.from_bytes(hashlib.md5(key).digest()[:8], "big") & ((1 << 63) - 1)
+
+
+def run(command: list[str]) -> str:
+    return subprocess.check_output(command, text=True, stderr=subprocess.STDOUT)
+
+
+def metadata(apk: Path, aapt: str, apksigner: str) -> dict:
+    if not apk.is_file() or apk.stat().st_size == 0:
+        raise ValueError(f"Missing extension APK: {apk}")
+    badging = run([aapt, "dump", "badging", str(apk)])
+    m = re.search(
+        r"(?m)^package: name='([^']+)' versionCode='(\d+)' versionName='([^']+)'",
+        badging,
+    )
+    if m is None:
+        raise ValueError(f"No Android package/versions in {apk}")
+    signature = run([apksigner, "verify", "--verbose", "--print-certs", str(apk)])
+    def digest(kind: str) -> str:
+        found = re.search(
+            rf"certificate SHA-{kind} digest: ([a-fA-F0-9]+)", signature,
+        )
+        if not found:
+            raise ValueError(f"APK missing SHA-{kind} signing certificate fingerprint")
+        return found.group(1).lower()
+
+    sha256 = digest("256")
+    if sha256 != EXPECTED_CERT_SHA256:
+        raise ValueError(f"Unexpected signer on {apk.name}: {sha256}")
+    return {
+        "package": m.group(1),
+        "code": int(m.group(2)),
+        "name": m.group(3),
+        "sha1": digest("1"),
+    }
+
+
+def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> dict:
+    # Prepare all metadata BEFORE publishing anything; fail closed on mismatch.
+    apk_metadata = {}
+    for spec in EXTENSIONS:
+        apk = input_dir / spec["filename"]
+        info = metadata(apk, aapt, apksigner)
+        if info["package"] != spec["package"]:
+            raise ValueError(f"Wrong APK package for {spec['name']}: {info['package']}")
+        if info["code"] <= 0 or not re.fullmatch(r"\d+\.\d+\.\d+", info["name"]):
+            raise ValueError(f"Unexpected Android version for {spec['name']}")
+        apk_metadata[spec["filename"]] = info
+
+    signers = {item["sha1"] for item in apk_metadata.values()}
+    if len(signers) != 1:
+        raise ValueError("Extension APK signer identities do not match")
+    sha1 = signers.pop()
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "apk").mkdir(exist_ok=True)
+    (output_dir / "icon").mkdir(exist_ok=True)
+    extensions = []
+
+    for spec in EXTENSIONS:
+        filename = spec["filename"]
+        info = apk_metadata[filename]
+        shutil.copy2(input_dir / filename, output_dir / "apk" / filename)
+        icon_name = filename.removesuffix(".apk") + ".png"
+        # Source extension APK contains the actual upstream vector-generated
+        # 192px icon resource under an obfuscated, but stable, resource path.
+        with ZipFile(input_dir / filename) as archive:
+            icons = [
+                item for item in archive.infolist()
+                if item.filename.startswith("res/") and item.filename.endswith(".png")
+                and item.file_size > 0
+            ]
+            if not icons:
+                raise ValueError(f"No extension icon found in {filename}")
+            largest = max(icons, key=lambda item: item.file_size)
+            (output_dir / "icon" / icon_name).write_bytes(archive.read(largest))
+        lib_version = info["name"].rsplit(".", 1)[0]
+        extensions.append(
+            {
+                "name": spec["name"],
+                "packageName": spec["package"],
+                "resources": {
+                    "apkUrl": f"{RAW_BASE}/apk/{filename}",
+                    "iconUrl": f"{RAW_BASE}/icon/{icon_name}",
+                },
+                "extensionLib": lib_version,
+                "versionCode": info["code"],
+                "versionName": info["name"],
+                "contentWarning": spec["warning"],
+                "sources": [
+                    {
+                        "id": source_id(spec["name"], language),
+                        "name": spec["name"],
+                        "language": language,
+                        "homeUrl": spec["url"],
+                        "mirrorUrls": [],
+                        "message": None,
+                    }
+                    for language in spec["languages"]
+                ],
+            }
+        )
+    index = {
+        "name": "Selura Extensions",
+        "badgeLabel": "Selura",
+        "signingKey": sha1,
+        "contact": {"website": SITE_URL, "discord": None},
+        "extensionList": {"extensions": extensions},
+        "extensionListUrl": None,
+    }
+    legacy = {
+        "index_v2": f"{RAW_BASE}/index.json",
+        "meta": {
+            "name": "Selura Extensions",
+            "shortName": "Selura",
+            "website": SITE_URL,
+            "signingKeyFingerprint": sha1,
+        },
+    }
+    (output_dir / "index.json").write_text(
+        json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8",
+    )
+    (output_dir / "repo.json").write_text(
+        json.dumps(legacy, indent=2) + "\n", encoding="utf-8",
+    )
+    return index
+
+
+def main() -> None:
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--apk-dir", type=Path, required=True)
+    p.add_argument("--output-dir", type=Path, required=True)
+    p.add_argument("--aapt", required=True)
+    p.add_argument("--apksigner", required=True)
+    args = p.parse_args()
+    index = generate(args.apk_dir, args.output_dir, args.aapt, args.apksigner)
+    print(f"Generated Selura store with {len(index['extensionList']['extensions'])} signed extensions")
+
+
+if __name__ == "__main__":
+    main()
