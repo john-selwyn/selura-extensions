@@ -77,6 +77,13 @@ jobs:
           gh release download test-expansion-5-pr-43-run-1 \
             --repo "$reader_repo" --pattern '*.apk' \
             --dir "$RUNNER_TEMP/source-apks"
+          # Preserve previously published 42 APKs: only Comix.to gets updated.
+          mkdir -p "$RUNNER_TEMP/comix-update"
+          gh release download test-expansion-5-pr-43-run-5 \
+            --repo "$reader_repo" --pattern seluracomixto.apk \
+            --dir "$RUNNER_TEMP/comix-update"
+          test -s "$RUNNER_TEMP/comix-update/seluracomixto.apk"
+          mv "$RUNNER_TEMP/comix-update/seluracomixto.apk" "$RUNNER_TEMP/source-apks/seluracomixto.apk"
           # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion + 5 new.
           test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           echo "43 signed APKs downloaded. Signer, APK package, source IDs and versions verified during index generation."
@@ -117,6 +124,16 @@ jobs:
           done
           test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
+      - name: Guard existing identities and all 42 unchanged APK files
+        run: |
+          set -euo pipefail
+          git fetch origin repo
+          git show FETCH_HEAD:index.json > "$RUNNER_TEMP/previous-index.json"
+          python3 scripts/validate_comix_update.py \
+            "$RUNNER_TEMP/previous-index.json" \
+            "$RUNNER_TEMP/public-store/index.json" \
+            "$RUNNER_TEMP/public-store/apk" \
+            FETCH_HEAD
       - name: Publish generated files on dedicated public repo branch
         run: |
           set -euo pipefail
