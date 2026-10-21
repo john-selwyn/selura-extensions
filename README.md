@@ -8,7 +8,7 @@ Independent public extension catalog for [Selura Manga](https://github.com/zexal
 https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/repo.json
 ```
 
-The store maintains **38 separately signed manga extensions**: 8 pre-existing sources, 18 already-published orphaned derivatives, and 12 new Keiyoushi-based derivatives (NHentai is **not** duplicated). Provider names appear naturally, without a "Selura" prefix.
+The store maintains **43 separately signed manga extensions** (38 already published, plus five pending new-batch verification): 8 pre-existing sources, 18 already-published orphaned derivatives, and 12 new Keiyoushi-based derivatives (NHentai is **not** duplicated). Provider names appear naturally, without a "Selura" prefix.
 
 The original 8 are NHentai, MangaDex, MANGA Plus by SHUEISHA, Webtoons.com, MangaFire, MangaPill, MangaKatana and Mangabat.
 
@@ -16,13 +16,15 @@ The new 18 are 3Hentai, AllPornComic, Asura Scans, Doujins, Flame Comics, HDouji
 
 **Twelve additional Keiyoushi-based sources:** Comick (Unoriginal), GlobalComix, MangaToon (Limited), Manga UP!, MANGA Plus Creators by SHUEISHA, NamiComi, Dynasty Scans, Gunnerkrigg Court, Mangago, Mangahere, MangaFox and Manganato.
 
+**Five further sources (pending signed APK publication):** Comix.to, Weeb Central, Kagane, Manga Ball, and MangaHub. Comix.to is a distinct provider from Comick (Unoriginal). All five have unique Android packages and immutable Selura 7303 source IDs; the first 38 remain unchanged.
+
 **Build and repository publishing are not evidence that a content provider works at runtime.** Test extensions on Android before relying on them.
 
 ## How to use
 
 1. In Selura Manga open **Browse → Extensions → Extension stores**.
 2. If Selura Extensions already exists, refresh the store. Otherwise, add the `repo.json` URL above. Keep the previous entry until the new catalog is verified; do not delete your other repositories.
-3. Return to **Browse → Extensions** and refresh. The 26 entries should appear with individual download icons when the published catalog is live.
+3. Return to **Browse → Extensions** and refresh. The existing 38 entries should appear (43 after successful release publication) with individual download icons when the published catalog is live.
 4. Install one or two sources and trust them in Selura. Search for manga, read an entire chapter and verify existing library entries are still available.
 
 The catalog endpoint contains the JSON metadata and public signed APK/icon URLs. The main Selura Android APK and existing reading data are not altered by a store update.
@@ -34,6 +36,7 @@ The catalog endpoint contains the JSON metadata and public signed APK/icon URLs.
 - The original 8 Android packages and source IDs remain unchanged.
 - The new 18 use distinct `selura...` internal Android packages and the immutable `versionId=7301` source family. Legacy explicit source IDs are remapped deterministically to avoid taking over already-installed source identities; the new source IDs must not change after publishing.
 - The added 12 retain separate immutable source.versionId=7302 and deterministic explicit source-ID remapping; the original 26 packages and their source IDs are not modified.
+- The additional five use immutable source.versionId=7303 and their own deterministic explicit-ID seed; all 38 previously published entries retain their exact metadata and identities.
 - Apache-2.0 upstream licensing and required attribution are preserved. Providers' login rules and access controls must be respected.
 
 See [STORE_MAINTENANCE.md](STORE_MAINTENANCE.md) for security, signing verification, and publishing details.

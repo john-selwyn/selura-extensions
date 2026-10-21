@@ -72,9 +72,14 @@ jobs:
           gh release download test-expansion-12-pr-32-run-2 \
             --repo "$reader_repo" --pattern '*.apk' \
             --dir "$RUNNER_TEMP/source-apks"
-          # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion, no extras.
-          test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 38
-          echo "38 published and signed APKs downloaded; individual signer and package checks run during generation."
+          # PR #43: 5 NEW independently signed APKs. Publication only after
+          # both Android source compile/lint/signature shards have passed.
+          gh release download test-expansion-5-pr-43-run-1 \
+            --repo "$reader_repo" --pattern '*.apk' \
+            --dir "$RUNNER_TEMP/source-apks"
+          # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion + 5 new.
+          test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
+          echo "43 signed APKs downloaded. Signer, APK package, source IDs and versions verified during index generation."
       - name: Generate public index, icons, APKs and manifest
         run: |
           set -euo pipefail
@@ -107,7 +112,10 @@ jobs:
             seluramanganato; do
             test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
           done
-          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 38
+          for apk in seluracomixto seluraweebcentral selurakagane seluramangaball seluramangahubio; do
+            test -s "$RUNNER_TEMP/public-store/apk/$apk.apk"
+          done
+          test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
       - name: Publish generated files on dedicated public repo branch
         run: |

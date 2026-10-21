@@ -415,7 +415,56 @@ EXPANSION_EXTENSIONS = (
         "explicit_old_ids": {"en": "1024627298672457456"},
     },
 )
-EXTENSIONS = BASE_EXTENSIONS + ORPHANED_EXTENSIONS + EXPANSION_EXTENSIONS
+# Immutable third expansion family: do not change source version IDs after release.
+FIVE_SOURCE_VERSION = 7303
+FIVE_EXTENSIONS = (
+    {
+        "filename": "seluracomixto.apk",
+        "name": "Comix.to",
+        "source_id_version": FIVE_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluracomixto",
+        "url": "https://comix.to",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "seluraweebcentral.apk",
+        "name": "Weeb Central",
+        "source_id_version": FIVE_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluraweebcentral",
+        "url": "https://weebcentral.com",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+    {
+        "filename": "selurakagane.apk",
+        "name": "Kagane",
+        "source_id_version": FIVE_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.selurakagane",
+        "url": "https://kagane.si",
+        "warning": "MIXED",
+        "languages": ("en", "ja", "ko", "zh", "es", "es-419", "fr", "de", "pt", "pt-BR", "ru", "it", "id", "vi", "th", "pl", "hi", "ar"),
+    },
+    {
+        "filename": "seluramangaball.apk",
+        "name": "Manga Ball",
+        "source_id_version": FIVE_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.all.seluramangaball",
+        "url": "https://mangaball.com",
+        "warning": "MIXED",
+        "languages": ("ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "fa", "fi", "fr", "he", "hi", "hu", "id", "it", "is", "ja", "ko", "kn", "ml", "ms", "ne", "nl", "no", "pl", "pt-BR", "ro", "ru", "sk", "sl", "sq", "sr", "sv", "ta", "th", "tr", "uk", "vi", "zh"),
+    },
+    {
+        "filename": "seluramangahubio.apk",
+        "name": "MangaHub",
+        "source_id_version": FIVE_SOURCE_VERSION,
+        "package": "eu.kanade.tachiyomi.extension.en.seluramangahubio",
+        "url": "https://mangahub.io",
+        "warning": "MIXED",
+        "languages": ("en",),
+    },
+)
+EXTENSIONS = BASE_EXTENSIONS + ORPHANED_EXTENSIONS + EXPANSION_EXTENSIONS + FIVE_EXTENSIONS
 
 
 def alternate_expansion_id(module: str, old_id: str) -> int:
@@ -424,6 +473,12 @@ def alternate_expansion_id(module: str, old_id: str) -> int:
     return (int.from_bytes(hashlib.sha256(seed).digest()[:8], "big") & ((1 << 63) - 1)) or 1
 
 
+
+
+def alternate_five_id(module: str, old_id: str) -> int:
+    """Exact same immutable explicit-ID family as reader expansion_5.py."""
+    seed = ("selura-expansion-five-v1:" + module + ":" + old_id).encode("utf-8")
+    return (int.from_bytes(hashlib.sha256(seed).digest()[:8], "big") & ((1 << 63) - 1)) or 1
 
 
 def source_id(name: str, language: str, version_id: int = 1) -> int:
@@ -530,6 +585,11 @@ def generate(input_dir: Path, output_dir: Path, aapt: str, apksigner: str) -> di
                                     spec["explicit_old_ids"][language],
                                 )
                                 if spec["source_id_version"] == EXPANSION_SOURCE_VERSION
+                                else alternate_five_id(
+                                    spec["package"].rsplit(".", 1)[-1],
+                                    spec["explicit_old_ids"][language],
+                                )
+                                if spec["source_id_version"] == FIVE_SOURCE_VERSION
                                 else alternate_orphan_id(
                                     spec["package"].rsplit(".", 1)[-1],
                                     spec["explicit_old_ids"][language],
