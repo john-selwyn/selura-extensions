@@ -79,7 +79,7 @@ jobs:
             --dir "$RUNNER_TEMP/source-apks"
           # Preserve previously published 42 APKs: only Comix.to gets updated.
           mkdir -p "$RUNNER_TEMP/comix-update"
-          gh release download test-expansion-5-pr-43-run-5 \
+          gh release download test-expansion-5-pr-43-run-6 \
             --repo "$reader_repo" --pattern seluracomixto.apk \
             --dir "$RUNNER_TEMP/comix-update"
           test -s "$RUNNER_TEMP/comix-update/seluracomixto.apk"
