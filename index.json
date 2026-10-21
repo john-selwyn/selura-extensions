@@ -2763,6 +2763,580 @@
             "message": null
           }
         ]
+      },
+      {
+        "name": "Comix.to",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluracomixto",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluracomixto.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluracomixto.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110001,
+        "versionName": "1.6.4001",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 4718386708904606101,
+            "name": "Comix.to",
+            "language": "en",
+            "homeUrl": "https://comix.to",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Weeb Central",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluraweebcentral",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluraweebcentral.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluraweebcentral.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110001,
+        "versionName": "1.6.4001",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 4842518586785094150,
+            "name": "Weeb Central",
+            "language": "en",
+            "homeUrl": "https://weebcentral.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Kagane",
+        "packageName": "eu.kanade.tachiyomi.extension.all.selurakagane",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/selurakagane.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/selurakagane.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110001,
+        "versionName": "1.6.4001",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 5258304114637877911,
+            "name": "Kagane",
+            "language": "en",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8988426193486381052,
+            "name": "Kagane",
+            "language": "ja",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8327180010117710371,
+            "name": "Kagane",
+            "language": "ko",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1029003406064744148,
+            "name": "Kagane",
+            "language": "zh",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8858288062744766955,
+            "name": "Kagane",
+            "language": "es",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8248910223143975578,
+            "name": "Kagane",
+            "language": "es-419",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2636903660428445890,
+            "name": "Kagane",
+            "language": "fr",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5650258206663375155,
+            "name": "Kagane",
+            "language": "de",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4078713062902995800,
+            "name": "Kagane",
+            "language": "pt",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5781305893574172398,
+            "name": "Kagane",
+            "language": "pt-BR",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6566811708370560312,
+            "name": "Kagane",
+            "language": "ru",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7569040581164754595,
+            "name": "Kagane",
+            "language": "it",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 157921936207328736,
+            "name": "Kagane",
+            "language": "id",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7749855574270129103,
+            "name": "Kagane",
+            "language": "vi",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1145441240431290964,
+            "name": "Kagane",
+            "language": "th",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1785898335746265411,
+            "name": "Kagane",
+            "language": "pl",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5905398335135000261,
+            "name": "Kagane",
+            "language": "hi",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3099260838550658943,
+            "name": "Kagane",
+            "language": "ar",
+            "homeUrl": "https://kagane.si",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "Manga Ball",
+        "packageName": "eu.kanade.tachiyomi.extension.all.seluramangaball",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangaball.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangaball.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110001,
+        "versionName": "1.6.4001",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 8905839792683861035,
+            "name": "Manga Ball",
+            "language": "ar",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8455553263176703102,
+            "name": "Manga Ball",
+            "language": "bg",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2891001567174026541,
+            "name": "Manga Ball",
+            "language": "bn",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 212183431200638458,
+            "name": "Manga Ball",
+            "language": "ca",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1778840399092349564,
+            "name": "Manga Ball",
+            "language": "cs",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1994380859270647221,
+            "name": "Manga Ball",
+            "language": "da",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7684730006168518813,
+            "name": "Manga Ball",
+            "language": "de",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2010153540935784760,
+            "name": "Manga Ball",
+            "language": "el",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1453442610165696909,
+            "name": "Manga Ball",
+            "language": "en",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 580784737272075614,
+            "name": "Manga Ball",
+            "language": "es",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 2321921489538570201,
+            "name": "Manga Ball",
+            "language": "fa",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 668892229138476540,
+            "name": "Manga Ball",
+            "language": "fi",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6809468165086251008,
+            "name": "Manga Ball",
+            "language": "fr",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8183575708059665955,
+            "name": "Manga Ball",
+            "language": "he",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7167690611258918964,
+            "name": "Manga Ball",
+            "language": "hi",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1636631509865129943,
+            "name": "Manga Ball",
+            "language": "hu",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5717154803390339335,
+            "name": "Manga Ball",
+            "language": "id",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9048450909659977509,
+            "name": "Manga Ball",
+            "language": "it",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 115723615739113288,
+            "name": "Manga Ball",
+            "language": "is",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 9125659563484715376,
+            "name": "Manga Ball",
+            "language": "ja",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 115743623767398810,
+            "name": "Manga Ball",
+            "language": "ko",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6493666264799084143,
+            "name": "Manga Ball",
+            "language": "kn",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3418135715048862298,
+            "name": "Manga Ball",
+            "language": "ml",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 286421114483626431,
+            "name": "Manga Ball",
+            "language": "ms",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8359638145166983285,
+            "name": "Manga Ball",
+            "language": "ne",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7751879847799022222,
+            "name": "Manga Ball",
+            "language": "nl",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4517519583979845734,
+            "name": "Manga Ball",
+            "language": "no",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 7138227045945886588,
+            "name": "Manga Ball",
+            "language": "pl",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 511188305974023993,
+            "name": "Manga Ball",
+            "language": "pt-BR",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4132743912346858798,
+            "name": "Manga Ball",
+            "language": "ro",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5002987292163809996,
+            "name": "Manga Ball",
+            "language": "ru",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6226061372290180602,
+            "name": "Manga Ball",
+            "language": "sk",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1511246979703339349,
+            "name": "Manga Ball",
+            "language": "sl",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1335872877518315951,
+            "name": "Manga Ball",
+            "language": "sq",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 4758091915716876624,
+            "name": "Manga Ball",
+            "language": "sr",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 1973244204532874413,
+            "name": "Manga Ball",
+            "language": "sv",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 6747330142796619947,
+            "name": "Manga Ball",
+            "language": "ta",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 80060435023527029,
+            "name": "Manga Ball",
+            "language": "th",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 53749537995131441,
+            "name": "Manga Ball",
+            "language": "tr",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 3865275247021726825,
+            "name": "Manga Ball",
+            "language": "uk",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 8354295496151922996,
+            "name": "Manga Ball",
+            "language": "vi",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          },
+          {
+            "id": 5005268007158934620,
+            "name": "Manga Ball",
+            "language": "zh",
+            "homeUrl": "https://mangaball.com",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
+      },
+      {
+        "name": "MangaHub",
+        "packageName": "eu.kanade.tachiyomi.extension.en.seluramangahubio",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/apk/seluramangahubio.apk",
+          "iconUrl": "https://raw.githubusercontent.com/zexaldragneel/selura-extensions/repo/icon/seluramangahubio.png"
+        },
+        "extensionLib": "1.6",
+        "versionCode": 110039,
+        "versionName": "1.6.4039",
+        "contentWarning": "MIXED",
+        "sources": [
+          {
+            "id": 4253809616067298172,
+            "name": "MangaHub",
+            "language": "en",
+            "homeUrl": "https://mangahub.io",
+            "mirrorUrls": [],
+            "message": null
+          }
+        ]
       }
     ]
   },
