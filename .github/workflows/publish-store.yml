@@ -84,6 +84,14 @@ jobs:
             --dir "$RUNNER_TEMP/comix-update"
           test -s "$RUNNER_TEMP/comix-update/seluracomixto.apk"
           mv "$RUNNER_TEMP/comix-update/seluracomixto.apk" "$RUNNER_TEMP/source-apks/seluracomixto.apk"
+          # Replace only Hive Scans with the separately verified Kotlin APK.
+          # The other 42 existing signed APKs come from immutable releases.
+          mkdir -p "$RUNNER_TEMP/hive-update"
+          gh release download test-hivescans-pr-46-run-1 \
+            --repo "$reader_repo" --pattern selurahivescans.apk \
+            --dir "$RUNNER_TEMP/hive-update"
+          test -s "$RUNNER_TEMP/hive-update/selurahivescans.apk"
+          mv "$RUNNER_TEMP/hive-update/selurahivescans.apk" "$RUNNER_TEMP/source-apks/selurahivescans.apk"
           # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion + 5 new.
           test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           echo "43 signed APKs downloaded. Signer, APK package, source IDs and versions verified during index generation."
@@ -133,6 +141,16 @@ jobs:
             "$RUNNER_TEMP/previous-index.json" \
             "$RUNNER_TEMP/public-store/index.json" \
             "$RUNNER_TEMP/public-store/apk" \
+            FETCH_HEAD
+      - name: Verify all prior identities, 42 APKs and 43 icons preserved
+        run: |
+          set -euo pipefail
+          git fetch origin repo
+          git show FETCH_HEAD:index.json > "$RUNNER_TEMP/previous-index.json"
+          python3 scripts/validate_hivescans_update.py \
+            "$RUNNER_TEMP/previous-index.json" \
+            "$RUNNER_TEMP/public-store/index.json" \
+            "$RUNNER_TEMP/public-store" \
             FETCH_HEAD
       - name: Publish generated files on dedicated public repo branch
         run: |
