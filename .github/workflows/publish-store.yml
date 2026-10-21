@@ -132,16 +132,6 @@ jobs:
           done
           test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
-      - name: Guard existing identities and all 42 unchanged APK files
-        run: |
-          set -euo pipefail
-          git fetch origin repo
-          git show FETCH_HEAD:index.json > "$RUNNER_TEMP/previous-index.json"
-          python3 scripts/validate_comix_update.py \
-            "$RUNNER_TEMP/previous-index.json" \
-            "$RUNNER_TEMP/public-store/index.json" \
-            "$RUNNER_TEMP/public-store/apk" \
-            FETCH_HEAD
       - name: Verify all prior identities, 42 APKs and 43 icons preserved
         run: |
           set -euo pipefail
