@@ -29,7 +29,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_orphaned_catalog_identity_is_stable_and_distinct(self):
         self.assertEqual(len(module.ORPHANED_EXTENSIONS), 18)
-        self.assertEqual(len(module.EXTENSIONS), 38)
+        self.assertEqual(len(module.EXTENSIONS), 43)
         self.assertEqual(module.ORPHANED_SOURCE_VERSION, 7301)
         self.assertEqual({item["name"] for item in module.ORPHANED_EXTENSIONS}, {
             "3Hentai", "AllPornComic", "Asura Scans", "Doujins", "Flame Comics",
@@ -37,8 +37,8 @@ class CatalogTests(unittest.TestCase):
             "Hive Scans", "MangaGeko", "Mangakakalot", "Mgread.io", "ToonGod",
             "Toonily", "Vortex Scans", "WebtoonXYZ",
         })
-        self.assertEqual(len({item["package"] for item in module.EXTENSIONS}), 38)
-        self.assertEqual(len({item["filename"] for item in module.EXTENSIONS}), 38)
+        self.assertEqual(len({item["package"] for item in module.EXTENSIONS}), 43)
+        self.assertEqual(len({item["filename"] for item in module.EXTENSIONS}), 43)
         self.assertTrue(all(item["source_id_version"] == 7301
                             for item in module.ORPHANED_EXTENSIONS))
         self.assertEqual(
@@ -67,7 +67,7 @@ class CatalogTests(unittest.TestCase):
         })
         self.assertEqual(len(module.BASE_EXTENSIONS), 8)
         self.assertEqual(len(module.ORPHANED_EXTENSIONS), 18)
-        self.assertEqual(len(module.EXTENSIONS), 38)
+        self.assertEqual(len(module.EXTENSIONS), 43)
         self.assertEqual(len(module.EXPANSION_EXTENSIONS[1]["languages"]), 41)
         self.assertEqual(len(module.EXPANSION_EXTENSIONS[5]["languages"]), 43)
         self.assertTrue(all(item["source_id_version"] == 7302
@@ -82,8 +82,38 @@ class CatalogTests(unittest.TestCase):
             module.source_id("Mangago", "en", 7302),
             module.source_id("Mangago", "en", 1),
         )
-        self.assertEqual(len({it["package"] for it in module.EXTENSIONS}), 38)
-        self.assertEqual(len({it["filename"] for it in module.EXTENSIONS}), 38)
+        self.assertEqual(len({it["package"] for it in module.EXTENSIONS}), 43)
+        self.assertEqual(len({it["filename"] for it in module.EXTENSIONS}), 43)
+
+    def test_five_new_sources_are_isolated_and_old_families_remain_untouched(self):
+        self.assertEqual(len(module.BASE_EXTENSIONS), 8)
+        self.assertEqual(len(module.ORPHANED_EXTENSIONS), 18)
+        self.assertEqual(len(module.EXPANSION_EXTENSIONS), 12)
+        self.assertEqual(len(module.FIVE_EXTENSIONS), 5)
+        self.assertEqual(len(module.EXTENSIONS), 43)
+        self.assertEqual(module.FIVE_SOURCE_VERSION, 7303)
+        self.assertEqual({item["name"] for item in module.FIVE_EXTENSIONS}, {
+            "Comix.to", "Weeb Central", "Kagane", "Manga Ball", "MangaHub",
+        })
+        self.assertEqual(len({it["package"] for it in module.EXTENSIONS}), 43)
+        self.assertEqual(len({it["filename"] for it in module.EXTENSIONS}), 43)
+        self.assertTrue(all(it["source_id_version"] == 7303
+                            for it in module.FIVE_EXTENSIONS))
+        names = [it["name"] for it in module.EXTENSIONS]
+        self.assertEqual(len(names), len(set(names)))
+        self.assertNotIn("Selura Comix", names)
+        self.assertNotEqual(
+            module.source_id("Comix.to", "en", 7303),
+            module.source_id("Comick (Unoriginal)", "all", 7302),
+        )
+        self.assertNotEqual(
+            module.alternate_five_id("seluracomixto", "123"),
+            module.alternate_expansion_id("seluracomixto", "123"),
+        )
+        self.assertEqual(len(next(it for it in module.FIVE_EXTENSIONS
+                                  if it["name"] == "Manga Ball")["languages"]), 42)
+        self.assertEqual(len(next(it for it in module.FIVE_EXTENSIONS
+                                  if it["name"] == "Kagane")["languages"]), 18)
 
     def test_reject_missing_or_mismatched_apk(self):
         with tempfile.TemporaryDirectory() as t:
@@ -105,7 +135,7 @@ class CatalogTests(unittest.TestCase):
             ]
             with patch.object(module, "metadata", side_effect=inputs):
                 index = module.generate(base, base / "publish", "aapt", "apksigner")
-            self.assertEqual(len(index["extensionList"]["extensions"]), 38)
+            self.assertEqual(len(index["extensionList"]["extensions"]), 43)
             self.assertEqual(index["signingKey"],
                              module.EXPECTED_CERT_SHA256)
             listing = json.loads((base / "publish/index.json").read_text())
@@ -124,13 +154,13 @@ class CatalogTests(unittest.TestCase):
                 module.source_id("Selura MangaDex", module.MANGADEX_LANGUAGES[0]),
             )
             self.assertTrue(all(not e["name"].startswith("Selura ") for e in listing["extensionList"]["extensions"]))
-            self.assertEqual(len({e["packageName"] for e in listing["extensionList"]["extensions"]}), 38)
+            self.assertEqual(len({e["packageName"] for e in listing["extensionList"]["extensions"]}), 43)
             self.assertEqual(
                 listing["extensionList"]["extensions"][2]["sources"][0]["id"],
                 module.source_id("MANGA Plus by SHUEISHA", "en", 2),
             )
             self.assertEqual(listing["extensionList"]["extensions"][1]["contentWarning"], "MIXED")
-            self.assertEqual(len(listing["extensionList"]["extensions"]), 38)
+            self.assertEqual(len(listing["extensionList"]["extensions"]), 43)
             by_name = {entry["name"]: entry for entry in listing["extensionList"]["extensions"]}
             self.assertEqual(
                 by_name["Flame Comics"]["sources"][0]["id"],
@@ -175,6 +205,24 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(
                 by_name["Mangago"]["sources"][0]["id"],
                 module.source_id("Mangago", "en", 7302),
+            )
+            # Existing 38-source prefix is never rewritten or reordered.
+            self.assertEqual(
+                [e["name"] for e in listing["extensionList"]["extensions"][:38]],
+                [spec["name"] for spec in (
+                    module.BASE_EXTENSIONS + module.ORPHANED_EXTENSIONS +
+                    module.EXPANSION_EXTENSIONS
+                )],
+            )
+            self.assertEqual(by_name["Comix.to"]["sources"][0]["id"],
+                             module.source_id("Comix.to", "en", 7303))
+            self.assertEqual(by_name["Weeb Central"]["sources"][0]["id"],
+                             module.source_id("Weeb Central", "en", 7303))
+            self.assertEqual(len(by_name["Kagane"]["sources"]), 18)
+            self.assertEqual(len(by_name["Manga Ball"]["sources"]), 42)
+            self.assertNotEqual(
+                by_name["Comix.to"]["packageName"],
+                by_name["Comick (Unoriginal)"]["packageName"],
             )
             for entry in listing["extensionList"]["extensions"]:
                 self.assertTrue(entry["resources"]["apkUrl"].startswith(module.RAW_BASE))
