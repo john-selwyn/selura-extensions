@@ -25,13 +25,13 @@ class HiveUpdateTests(unittest.TestCase):
         self.old = {
             "signingKey": "unchanged",
             "extensionList": {"extensions": [
-                item("hive", guard.TARGET, 109031, 123),
+                item("hive", guard.TARGET, 110028, 123),
                 item("other", "eu.kanade.tachiyomi.extension.en.other", 109031, 456),
             ]},
         }
         self.new = copy.deepcopy(self.old)
-        self.new["extensionList"]["extensions"][0]["versionCode"] = 110001
-        self.new["extensionList"]["extensions"][0]["versionName"] = "1.6.4001"
+        self.new["extensionList"]["extensions"][0]["versionCode"] = 110202
+        self.new["extensionList"]["extensions"][0]["versionName"] = "1.6.4202"
 
     def verify(self, after):
         guard.compare_catalog(self.old, after, expected_count=2, expected_sources=2)
@@ -39,9 +39,20 @@ class HiveUpdateTests(unittest.TestCase):
     def test_hive_upgrade_only(self):
         self.verify(self.new)
 
+    def test_rejects_old_hive_release_and_wrong_other_sources(self):
+        # Real catalog baseline is 1.6.4028, Android versionCode 110028.
+        old_version = copy.deepcopy(self.new)
+        old_version["extensionList"]["extensions"][0]["versionCode"] = 110028
+        with self.assertRaises(ValueError):
+            self.verify(old_version)
+        unrelated = copy.deepcopy(self.new)
+        unrelated["extensionList"]["extensions"][1]["versionCode"] += 1
+        with self.assertRaises(ValueError):
+            self.verify(unrelated)
+
     def test_no_downgrade_or_same_version(self):
         modified = copy.deepcopy(self.new)
-        modified["extensionList"]["extensions"][0]["versionCode"] = 109031
+        modified["extensionList"]["extensions"][0]["versionCode"] = 110028
         with self.assertRaises(ValueError):
             self.verify(modified)
 
