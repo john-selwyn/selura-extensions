@@ -85,12 +85,12 @@ jobs:
           test -s "$RUNNER_TEMP/comix-update/seluracomixto.apk"
           mv "$RUNNER_TEMP/comix-update/seluracomixto.apk" "$RUNNER_TEMP/source-apks/seluracomixto.apk"
           # Replace only Hive Scans with the separately verified Kotlin APK.
-          # PR #85 enables standard HTTP cache semantics on public images.
-          # Do not merge until the immutable signed release exists and its
-          # manifest identity, version and certificate are verified.
+          # PR #87 restores the pre-optimization Hive Scans image request
+          # behavior following an owner-reported Cloudflare challenge.
+          # Do not merge until its higher-version signed APK is verified.
           # The other 42 existing signed APKs come from immutable releases.
           mkdir -p "$RUNNER_TEMP/hive-update"
-          gh release download test-hivescans-pr-85-run-2 \
+          gh release download test-hivescans-pr-87-run-3 \
             --repo "$reader_repo" --pattern selurahivescans.apk \
             --dir "$RUNNER_TEMP/hive-update"
           test -s "$RUNNER_TEMP/hive-update/selurahivescans.apk"
