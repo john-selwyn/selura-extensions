@@ -95,6 +95,14 @@ jobs:
             --dir "$RUNNER_TEMP/hive-update"
           test -s "$RUNNER_TEMP/hive-update/selurahivescans.apk"
           mv "$RUNNER_TEMP/hive-update/selurahivescans.apk" "$RUNNER_TEMP/source-apks/selurahivescans.apk"
+          # One independently signed Weeb Central page parser update.
+          # Keep the owner-tested Hive Scans rollback pin above untouched.
+          mkdir -p "$RUNNER_TEMP/weebcentral-update"
+          gh release download test-weebcentral-pr-90-run-1 \
+            --repo "$reader_repo" --pattern seluraweebcentral.apk \
+            --dir "$RUNNER_TEMP/weebcentral-update"
+          test -s "$RUNNER_TEMP/weebcentral-update/seluraweebcentral.apk"
+          mv "$RUNNER_TEMP/weebcentral-update/seluraweebcentral.apk" "$RUNNER_TEMP/source-apks/seluraweebcentral.apk"
           # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion + 5 new.
           test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           echo "43 signed APKs downloaded. Signer, APK package, source IDs and versions verified during index generation."
@@ -135,12 +143,12 @@ jobs:
           done
           test "$(find "$RUNNER_TEMP/public-store/apk" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           sha256sum "$RUNNER_TEMP/public-store/apk/"*.apk
-      - name: Verify all prior identities, 42 APKs and 43 icons preserved
+      - name: Verify 42 unchanged APKs, all source IDs and 43 icons preserved
         run: |
           set -euo pipefail
           git fetch origin repo
           git show FETCH_HEAD:index.json > "$RUNNER_TEMP/previous-index.json"
-          python3 scripts/validate_hivescans_update.py \
+          python3 scripts/validate_weebcentral_update.py \
             "$RUNNER_TEMP/previous-index.json" \
             "$RUNNER_TEMP/public-store/index.json" \
             "$RUNNER_TEMP/public-store" \
