@@ -53,7 +53,7 @@ SENSITIVE_PERMISSIONS = frozenset({
 # Other declared permissions still appear in the report for human review.
 PERMISSION_RE = re.compile(r"(?m)^\s*uses-permission(?:-sdk-\d+)?:\s*name='([^']+)'")
 PACKAGE_RE = re.compile(r"^package:\s+name='([^']+)'\s+versionCode='(\d+)'", re.MULTILINE)
-CERT_RE = re.compile(r"(?mi)^Signer #\d+ certificate SHA-256 digest:\s*([a-f0-9]{64})\s*$")
+CERT_RE = re.compile(r"certificate SHA-256 digest:\s*([a-fA-F0-9]{64})", re.IGNORECASE)
 APK_LIMIT_BYTES = 20 * 1024 * 1024
 
 
@@ -79,7 +79,7 @@ def parse_signers(output: str) -> list[str]:
     signers = CERT_RE.findall(output)
     if not signers:
         raise AuditError("apksigner produced no verifiable SHA-256 certificate")
-    return signers
+    return [cert.lower() for cert in signers]
 
 
 def parse_permissions(output: str) -> list[str]:
