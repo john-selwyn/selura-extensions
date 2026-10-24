@@ -103,6 +103,15 @@ jobs:
             --dir "$RUNNER_TEMP/weebcentral-update"
           test -s "$RUNNER_TEMP/weebcentral-update/seluraweebcentral.apk"
           mv "$RUNNER_TEMP/weebcentral-update/seluraweebcentral.apk" "$RUNNER_TEMP/source-apks/seluraweebcentral.apk"
+          # Replace only Doujins with the separately compiled and signed
+          # gallery reliability update from native source PR #103.
+          # No Play Protect bypass; preserve all 42 other extension APKs.
+          mkdir -p "$RUNNER_TEMP/doujins-update"
+          gh release download test-doujins-pr-103-run-4 \
+            --repo "$reader_repo" --pattern seluradoujins.apk \
+            --dir "$RUNNER_TEMP/doujins-update"
+          test -s "$RUNNER_TEMP/doujins-update/seluradoujins.apk"
+          mv "$RUNNER_TEMP/doujins-update/seluradoujins.apk" "$RUNNER_TEMP/source-apks/seluradoujins.apk"
           # Exactly 2 legacy + 6 batch + 18 orphaned + 12 expansion + 5 new.
           test "$(find "$RUNNER_TEMP/source-apks" -maxdepth 1 -name '*.apk' | wc -l)" -eq 43
           echo "43 signed APKs downloaded. Signer, APK package, source IDs and versions verified during index generation."
@@ -148,7 +157,7 @@ jobs:
           set -euo pipefail
           git fetch origin repo
           git show FETCH_HEAD:index.json > "$RUNNER_TEMP/previous-index.json"
-          python3 scripts/validate_weebcentral_update.py \
+          python3 scripts/validate_doujins_update.py \
             "$RUNNER_TEMP/previous-index.json" \
             "$RUNNER_TEMP/public-store/index.json" \
             "$RUNNER_TEMP/public-store" \
