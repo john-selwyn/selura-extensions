@@ -17,6 +17,22 @@ The inherited native extension installer already supports multiple modes:
 
 The reader checks the APK's signing key against the selected extension store before installing. That is useful, but independent of Google's malware/reputation evaluation.
 
+## Verified first live run — October 24, 2026
+
+The [first successful live APK audit run #2](https://github.com/zexaldragneel/selura-extensions/actions/runs/40093793170) **PASSED**:
+
+- **43 of 43** APKs downloaded from the currently published store and independently verified with Android SDK tools.
+- Original signing certificate, unique manifest package identity and published version matched on all 43.
+- **341** catalog source IDs were preserved.
+- **0** APKs requested any of the sensitive Android permissions explicitly tracked by the audit.
+- **0** APKs failed identity or archive checks.
+- All **28** store and security unit tests passed in the corresponding run.
+- Full manifest permission lists, individual APK hashes and identity details are retained as workflow artifacts: [JSON/Markdown evidence](https://github.com/zexaldragneel/selura-extensions/actions/runs/40093793170/artifacts/12560192017).
+
+The first draft of the checker failed because its certificate-text parser was too restrictive; it was corrected to accept the Android SDK apksigner output format already recognized by our publishing pipeline. That initial failure was not an actual invalid signature.
+
+**Doujins is not requesting one of the monitored sensitive Android permissions in this release.** A Play Protect scan recommendation can still occur because independent packages and signing identities may be unfamiliar to Google's reputation system; this audit does not identify the definitive cause and does not suppress scans.
+
 ## Automated audit
 
 The new Audit Published Extension APKs GitHub Actions workflow operates only on the current public store:
